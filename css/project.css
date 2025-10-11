@@ -1,0 +1,309 @@
+main{
+    font-family: open-sans, sans-serif;
+    background-color: transparent;
+}
+
+main ul{
+    font-size: 20px;
+}
+
+/* Override for carousel */
+main ul.list {
+    font-size: initial;
+}
+
+
+.gallery{
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+    grid-gap: 1rem;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.gallery img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery img:hover{
+    cursor: zoom-in;
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    align-content: center;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    align-content: center;
+    width: 80%;
+    max-width: 1500px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.carousel {
+    box-sizing: content-box;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel .carousel-item{
+    width: 550px;
+}
+
+nav, header{
+    width: 100%;
+    padding: 0;
+}
+
+.materialboxed{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+h2{
+    font-size: 2em;
+    font-weight: bold;
+    margin: 2rem 0 1rem 0;
+}
+
+.content{
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    grid-gap: 1rem;
+}
+
+.left{
+    grid-column: 1;
+}
+
+.right{
+    grid-column: 2/4;
+    grid-row: 1 / 3;
+    text-align: right;
+}
+
+button:hover {
+  box-shadow: 1px 1px #FFF, 2px 2px #fff, 3px 3px #FFF;
+  transform: translateX(-3px);
+}
+
+button {
+   color: #fff;
+   background-color: #000;
+   border: 1px solid #fff;
+   border-radius: 4px;
+   padding: 0 15px;
+   cursor: pointer;
+   height: 32px;
+   transition: all 0.2s ease-in-out;
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 5px #fff;
+    color:#fff;
+    background-color: #000;
+}
+
+.button-white {
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 4px;
+    padding: 0 15px;
+    cursor: pointer;
+    height: 32px;
+    font-size: 14px;
+    transition: all 0.2s ease-in-out;
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 5px #000;
+    color:#fff;
+    background-color: #000;
+}
+
+.button-white:hover {
+    box-shadow: 1px 1px #000, 2px 2px #000, 3px 3px #000;
+    transform: translateX(-3px);
+}
+
+sub{
+    font-size: 2em;
+    color: #666;
+    text-align: center;
+    width: 100%;
+    display: block;
+    margin-bottom: 1.5em;
+}
+
+.content div ul li {
+    list-style: disc;
+}
+
+.technologies{
+    display: flex; 
+    flex-direction: column;
+}
+
+span {
+    background-color: #d1d1d1;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 5px 7px;
+    border-radius: 4px;
+    margin: 0.25em auto;
+    font-size: 0.5em;
+}
+
+.content div ul{
+    padding-left: 20px;
+}
+
+/* Clean carousel styles */
+.carousel-area {
+  text-align: center;
+  margin: 2rem 0;
+  position: relative;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.3s ease;
+}
+
+.carousel-arrow.left {
+  left: 20px;
+}
+
+.carousel-arrow.right {
+  right: 20px;
+}
+
+.carousel-arrow:hover {
+  background: rgba(0,0,0,0.9);
+}
+
+.carousel-item {
+  display: inline-block !important;
+  margin: 0 10px;
+  border: 2px solid #333;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  vertical-align: top;
+}
+
+.carousel-item.side {
+  width: 350px !important;
+  height: 280px !important;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  opacity: 0.7 !important;
+  transform: scale(0.9) !important;
+}
+
+.carousel-item.act {
+  width: 500px !important;
+  height: 400px !important;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  transform: scale(1) !important;
+  cursor: pointer;
+  opacity: 1 !important;
+}
+
+.carousel-item.act:hover {
+  transform: scale(1.02) !important;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+}
+
+.carousel-item img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  transition: opacity 0.4s ease;
+  display: block !important;
+}
+
+/* Lightbox styles */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  z-index: 1001;
+}
+
+.lightbox .close:hover {
+  color: #bbb;
+}
+
+.lightbox-content {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.8);
+  transition: transform 0.3s ease;
+}

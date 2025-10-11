@@ -1,0 +1,39 @@
+#title{
+    font-size: 6em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    font-family: 'open-sans', sans-serif;
+    text-align: center;
+    
+}
+
+main{
+    width: 70%;
+    margin: 0 auto;
+}
+
+.work{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.section-header{
+    font-size: 2em;
+    font-weight: bold;
+    font-family: 'open-sans', sans-serif;
+    margin: 2rem 0 1rem 0;
+}
+
+footer{
+    width: 70%;
+}
+
+section{
+    background-color: white;
+    padding: 2em;
+    margin: 1em;
+}

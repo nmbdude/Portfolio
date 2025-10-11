@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nate Boone - Memory Blast</title>
+    <link rel="stylesheet" href="../../css/materialize.css">
+    <link rel="stylesheet" href="../../css/materialize.min.css">
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/work.css">
+    <link rel="stylesheet" href="../../css/project.css">
+    <style>
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("../../media/images/project-covers/memory-blast-cover.png");
+            background-size: cover;
+            background-position: center;
+            z-index: -1; /* Ensure it is behind the main content */
+        }
+    </style>
+</head>
+<body>
+<header>
+    <nav>
+        <h1 class="name">Nate Boone</h1>
+        <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../academic-work.html">Academic Work</a></li>
+            <li><a href="../../personal-work.html">Personal Work</a></li>
+            <li><a href="#footer">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <h1 id="title">Memory Blast</h1>
+    <hr>
+    <section>
+        <div class="content">
+            <div>
+                <h2>Overview</h2>
+                <p>
+                    Memory Blast is an online card matching game. The player must match all the cards before time runs
+                    out.
+                    Every time that they match a card, a few seconds of time is added to their timer. If they get a
+                    match incorrect,
+                    there is a brief period where they cannot match any cards.
+                    The game will keep track of highest score (that isn't a win) and store it in local storage for later
+                    play sessions.
+                    The games functionality and the shapes to match were made by me, from scratch and based in the
+                    PixiJS graphics framework.
+                </p>
+            </div>
+            <div class="center">
+                <h2>Technologies</h2>
+                <ul>
+                    <li>JavaScript</li>
+                    <li>PixiJS graphics framework</li>
+                </ul>
+            </div>
+            <div class="center">
+                <h2>Features</h2>
+                <ul>
+                    <li>Grid generation system</li>
+                    <li>Card matching system</li>
+                    <li>Timer based on delta time</li>
+                    <li>Highscore/score keeping system</li>
+                </ul>
+            </div>
+        </div>
+        <h2 class="center">Gallery</h2>
+        <div class="carousel" style="user-select: none">
+            <a class="carousel-item"><img class="materialboxed"
+                                          src="../../media/images/project-screenshots/memory-blast/memory-reveal.png"
+                                          alt="Memory blast reveal cards"></a>
+            <a class="carousel-item"><img class="materialboxed"
+                                          src="../../media/images/project-screenshots/memory-blast/memory-win.png"
+                                          alt="Memory blast win"></a>
+            <a class="carousel-item"><img class="materialboxed"
+                                          src="../../media/images/project-screenshots/memory-blast/memory-game-over.png"
+                                          alt="Memory blast game over"></a>
+        </div>
+    </section>
+</main>
+<footer id="footer">
+    <h2>Contact</h2>
+    <div style="display: flex">
+        <p class="footer-text">Email: <a href="mailto:nmb7888@rit.edu">nmb7888@rit.edu</a></p>
+        <p class="footer-text"><a href="https://www.linkedin.com/in/nate-boone-/">LinkedIn</a></p>
+        <p class="footer-text">Phone: <a href="tel:773-332-7916">(773) 332-7916</a></p>
+    </div>
+</footer>
+<div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+</div>
+<script src="../../js/project.js"></script>
+<script src="../../js/redirect.js"></script>
+<script src="../../js/materialize.js"></script>
+<script src="../../js/materialize.min.js"></script>
+</body>
+</html>
