@@ -1,87 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Nate Boone - Amiibo Center</title>
-    
+
     <link rel="stylesheet" href="../../css/materialize.css">
     <link rel="stylesheet" href="../../css/materialize.min.css">
     <link rel="stylesheet" href="../../css/index.css">
     <link rel="stylesheet" href="../../css/work.css">
     <link rel="stylesheet" href="../../css/project.css">
+    <!-- Swiper 6 CSS (CDN) -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@6/swiper-bundle.min.css">
     <link href="https://unpkg.com/pattern.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <script src="https://hammerjs.github.io/dist/hammer.js"></script>
-   <script src="../../js/carousel.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    
+    
 </head>
+
 <body class="pattern-cross-dots-md" style="background-color: rgba(190, 190, 190, 0.473);">
-<header>
-    <nav class="pattern-grid-lg bg-slate-900 text-slate-800">
-        <h1 class="name"><button onclick="window.location.href='../../index.html'" style="height: auto; font-weight: bold;">Nate Boone</button></h1>
-        <ul>
-            <li><button class="nav-button" onclick="window.location.href='../../index.html'">Home</button></li>
-            <li><button class="nav-button" onclick="window.location.href='../../academic-work.html'">Academic Work</button></li>
-            <li><button class="nav-button" onclick="window.location.href='../../personal-work.html'">Personal Work</button></li>
-            <li><button class="nav-button" onclick="window.location.href='../../about-me.html'">About Me</button></li>
-            <li><button class="nav-button" onclick="window.location.href='#footer'">Contact</button></li>
-        </ul>
-    </nav>
-</header>
-<main>
-    <section>
-        <h3 id="title" style="font-family: 'Google Sans Code';">Amiibo Center</h3>
-        
-        <sub>Search. Discover. Collect.</sub>
-        <button class="button-white" style="margin: auto auto; display: block; font-size: 15px;" onclick="window.open('https://people.rit.edu/nmb7888/235/project2/', '_blank')">Try it Out</button>
-    </section>
-    <section>
-        <div class="content">
-            <div>
-                <h2>Summary
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>JavaScript</span></h2>
-                <ul>
-                    <li>Built a responsive web app for searching Amiibo characters by name, series, and type</li>
-                    <li>Integrated the Amiibo API to fetch and display dynamic character data</li>
-                    <li>Designed and coded the entire frontend from scratch using HTML and JavaScript</li>
-                    <li>Implemented persistent search history using local storage for smoother UX</li>
-                    <li>Focused on clean UI, intuitive filters, and seamless data integration</li>
-                </ul>
+    <header>
+        <nav class="pattern-grid-lg bg-slate-900 text-slate-800">
+            <h1 class="name"><button onclick="window.location.href='../../index.html'"
+                    style="height: auto; font-weight: bold;">Nate Boone</button></h1>
+            <button class="hamburger" onclick="toggleMenu()">☰</button>
+            <ul class="nav-menu">
+                <li><button class="nav-button" onclick="window.location.href='../../index.html'">Home</button></li>
+                <li><button class="nav-button" onclick="window.location.href='../../academic-work.html'">Academic
+                        Work</button></li>
+                <li><button class="nav-button" onclick="window.location.href='../../personal-work.html'">Personal
+                        Work</button></li>
+                <li><button class="nav-button" onclick="window.location.href='../../about-me.html'">About Me</button>
+                </li>
+                <li><button class="nav-button" onclick="window.location.href='#footer'">Contact</button></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h3 id="title" style="font-family: 'Google Sans Code';">Amiibo Center</h3>
+
+            <sub>Search. Discover. Collect.</sub>
+            <button class="button-white" style="margin: auto auto; display: block; font-size: 15px;"
+                onclick="window.open('https://people.rit.edu/nmb7888/235/project2/', '_blank')">Try it Out</button>
+        </section>
+        <section>
+            <div class="content">
+                <div>
+                    <h2>Summary
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </h2>
+                    <ul>
+                        <li>Built a responsive web app for searching Amiibo characters by name, series, and type</li>
+                        <li>Integrated the Amiibo API to fetch and display dynamic character data</li>
+                        <li>Designed and coded the entire frontend from scratch using HTML and JavaScript</li>
+                        <li>Implemented persistent search history using local storage for smoother UX</li>
+                        <li>Focused on clean UI, intuitive filters, and seamless data integration</li>
+                    </ul>
+                </div>
+                <!-- <img class="skills-illustration" src="../../media/images/Skills/Skills_01.svg" alt="Skills Illustration"> -->
             </div>
-        </div>
-        <h2 class="center">Gallery</h2>
-        
-        <!-- Working carousel location - directly in section -->
-        <div class="carousel-area" style="text-align: center; margin: 2rem 0; position: relative;">
-            <!-- Left Arrow -->
-            <button class="carousel-arrow left" onclick="switchToImage(-1)" style="position: absolute; left: 20px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.7); color: white; border: none; border-radius: 50%; width: 50px; height: 50px; font-size: 20px; cursor: pointer; z-index: 10; transition: background 0.3s ease;">‹</button>
-            
-            <!-- Left side image -->
-            <div id="carousel-left" class="carousel-item side" style="display: inline-block; margin: 0 10px; width: 350px; height: 280px; border: 2px solid #333; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.2); opacity: 0.7; transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); transform: scale(0.9); vertical-align: top;">
-                <img id="left-img" src="../../media/images/project-screenshots/amiibo-center/amiibo-homepage.png" alt="Amiibo Center Screenshot" style="width: 100%; height: 100%; object-fit: cover; transition: opacity 0.4s ease; display: block;">
+            <h2 class="center">Gallery</h2>
+
+            <!-- Slick carousel - full-bleed to reduce whitespace -->
+            <div class="swiper full-bleed">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img id="left-img" src="../../media/images/project-screenshots/amiibo-center/amiibo-homepage.png"
+                            alt="Amiibo Center Screenshot"
+                            style="width: 100%; object-fit: contain; display: block;">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="center-img" src="../../media/images/project-screenshots/amiibo-center/amiibo-result.png"
+                            alt="Amiibo Center Screenshot"
+                            style="width: 100%; object-fit: contain; display: block;">
+                    </div>
+                    <div class="swiper-slide">
+                        <img id="right-img" src="../../media/images/project-screenshots/amiibo-center/amiibo-search.png"
+                            alt="Amiibo Center Screenshot"
+                            style="width: 100%; object-fit: contain; display: block;">
+                    </div>
+                </div>
+                <button class="carousel-arrow left" type="button" aria-label="Previous slide"></button>
+                <button class="carousel-arrow right" type="button" aria-label="Next slide"></button>
+                <div class="carousel-dots"></div>
             </div>
-            
-            <!-- Center active image -->
-            <div id="carousel-center" class="carousel-item act" onclick="openLightbox()" style="display: inline-block; margin: 0 10px; width: 500px; height: 400px; border: 2px solid #333; border-radius: 8px; overflow: hidden; box-shadow: 0 8px 16px rgba(0,0,0,0.3); transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); transform: scale(1); cursor: pointer; vertical-align: top;">
-                <img id="center-img" src="../../media/images/project-screenshots/amiibo-center/amiibo-result.png" alt="Amiibo Center Screenshot" style="width: 100%; height: 100%; object-fit: cover; transition: opacity 0.4s ease; display: block;">
-            </div>
-            
-            <!-- Right side image -->
-            <div id="carousel-right" class="carousel-item side" style="display: inline-block; margin: 0 10px; width: 350px; height: 280px; border: 2px solid #333; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.2); opacity: 0.7; transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); transform: scale(0.9); vertical-align: top;">
-                <img id="right-img" src="../../media/images/project-screenshots/amiibo-center/amiibo-search.png" alt="Amiibo Center Screenshot" style="width: 100%; height: 100%; object-fit: cover; transition: opacity 0.4s ease; display: block;">
-            </div>
-            
-            <!-- Right Arrow -->
-            <button class="carousel-arrow right" onclick="switchToImage(1)" style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.7); color: white; border: none; border-radius: 50%; width: 50px; height: 50px; font-size: 20px; cursor: pointer; z-index: 10; transition: background 0.3s ease;">›</button>
-        </div>
-    </section>
-</main>
-<div id="lightbox" class="lightbox" onclick="closeLightbox()" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.9); align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease;">
-    <span class="close" onclick="closeLightbox()" style="position: absolute; top: 20px; right: 35px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; transition: 0.3s; z-index: 1001;">&times;</span>
-    <img class="lightbox-content" id="lightbox-img" style="max-width: 90%; max-height: 90%; object-fit: contain; border-radius: 8px; box-shadow: 0 8px 32px rgba(0,0,0,0.8); transition: transform 0.3s ease;">
-</div>
+        </section>
+    </main>
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()"
+        style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.9); align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease;">
+        <span class="close" onclick="closeLightbox()"
+            style="position: absolute; top: 20px; right: 35px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; transition: 0.3s; z-index: 1001;">&times;</span>
+        <img class="lightbox-content" id="lightbox-img"
+            style="max-width: 90%; max-height: 90%; object-fit: contain; border-radius: 8px; box-shadow: 0 8px 32px rgba(0,0,0,0.8); transition: transform 0.3s ease;">
+    </div>
+    <!-- Swiper 6 JS (CDN) -->
+    <script src="https://unpkg.com/swiper@6/swiper-bundle.min.js"></script>
+    <script src="../../js/swiper.js"></script>
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.nav-menu');
+            menu.classList.toggle('show');
+        }
+    </script>
 </body>
 </html>

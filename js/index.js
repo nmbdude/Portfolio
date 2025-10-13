@@ -21,3 +21,16 @@ viewAllAcademic.addEventListener('click', function() {
 viewAllPersonal.addEventListener('click', function() {
     window.open("personal-work.html", "_self");
 });
+
+// Mobile nav toggle: toggle .nav-menu.show when hamburger clicked
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', function() {
+            const isShown = navMenu.classList.toggle('show');
+            hamburger.setAttribute('aria-expanded', isShown ? 'true' : 'false');
+        });
+    }
+});

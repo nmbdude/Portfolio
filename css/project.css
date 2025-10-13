@@ -1,3 +1,32 @@
+.swiper {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  margin: 2rem auto;
+  height: 400px;
+  background: transparent;
+  overflow: hidden; /* hide overflow so only one slide is visible */
+}
+.swiper-wrapper {
+  height: 100%;
+  display: flex; /* required for Swiper layout when not using bundle CSS */
+}
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  flex: 0 0 100%; /* one slide per view width */
+}
+.swiper-slide img {
+  max-width: 100%;
+  max-height: 90%;
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
+  border-radius: 8px;
+}
+
 main{
     font-family: open-sans, sans-serif;
     background-color: transparent;
@@ -11,7 +40,6 @@ main ul{
 main ul.list {
     font-size: initial;
 }
-
 
 .gallery{
     display: grid;
@@ -88,9 +116,16 @@ nav, header{
 .materialboxed{
     width: 100%;
     height: 100%;
-    object-fit: cover;
-}
 
+}
+.swiper .carousel-dots .dot:hover {
+  transform: none !important; /* prevent hover shift from global button:hover */
+  box-shadow: none; /* dots stay steady without fake offset shadow */
+}
+.swiper .carousel-arrow:hover {
+  transform: translateY(5%) !important; /* keep vertical centering; block global translateX */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2); /* keep existing */
+}
 h2{
     font-size: 2em;
     font-weight: bold;
@@ -160,6 +195,74 @@ button:focus {
     transform: translateX(-3px);
 }
 
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-5%);
+  z-index: 10;
+  background: rgba(0,0,0,0.85);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+button .carousel-arrow {
+  background: none;
+  color: inherit;
+  box-shadow: none;
+  width: auto;
+  height: auto;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+.carousel-arrow.left::before {
+  content: '';
+  width: 24px;
+  height: 24px;
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M24 12L16 20L24 28' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-size: 24px 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.carousel-arrow.right::before {
+  content: '';
+  width: 24px;
+  height: 24px;
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16 12L24 20L16 28' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-size: 24px 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.carousel-arrow.left {
+  left: 8px;
+}
+.carousel-arrow.right {
+  right: 8px;
+}
+.carousel-dots {
+  position: absolute;
+  left: 0; right: 0; bottom: 12px;
+  display: flex; justify-content: center; gap: 8px;
+  z-index: 10;
+}
+.carousel-dots .dot {
+  width: 12px; height: 12px; border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  border: none; padding: 0; cursor: pointer;
+}
+.carousel-dots .dot.active {
+  background: rgba(255,255,255,0.95);
+}
+
 sub{
     font-size: 2em;
     color: #666;
@@ -192,8 +295,15 @@ span {
     padding-left: 20px;
 }
 
+.skills-illustration {
+  width: 50%;
+  height: auto;
+  
+}
+
+
 /* Clean carousel styles */
-.carousel-area {
+/* .carousel-area {
   text-align: center;
   margin: 2rem 0;
   position: relative;
@@ -212,7 +322,7 @@ span {
   font-size: 20px;
   cursor: pointer;
   z-index: 10;
-  transition: background 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 .carousel-arrow.left {
@@ -246,7 +356,7 @@ span {
 }
 
 .carousel-item.act {
-  width: 500px !important;
+  width: 700px !important;
   height: 400px !important;
   box-shadow: 0 8px 16px rgba(0,0,0,0.3);
   transform: scale(1) !important;
@@ -265,7 +375,7 @@ span {
   object-fit: cover;
   transition: opacity 0.4s ease;
   display: block !important;
-}
+} */
 
 /* Lightbox styles */
 .lightbox {
@@ -306,4 +416,132 @@ span {
   border-radius: 8px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.8);
   transition: transform 0.3s ease;
+}
+
+/* Carousel area styles (vanilla) */
+.carousel-area {
+  margin: 2rem auto;
+  width: 100%;
+  max-width: 2000px;
+  min-width: 320px;
+  position: relative;
+}
+
+/* Full-bleed variant to span edge-to-edge and minimize whitespace */
+.carousel-area.full-bleed {
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Vanilla carousel layout */
+
+
+.carousel-area .slide {
+  /* Only Swiper's .swiper-slide layout, no custom flex/height/padding */
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+/* Compensate slide padding so the outer edges align nicely */
+/* Compensate slide padding so edges align */
+.carousel-area { margin-left: 0; margin-right: 0; }
+.carousel-area .carousel-track { margin: 0 -24px; }
+
+.carousel-area .slide img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  max-height: 60vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+.carousel-area .carousel-arrow {
+  z-index: 5; /* ensure arrows sit above slides */
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  opacity: 1 !important;
+  position: absolute;
+  background: rgba(0,0,0,0.85) !important;
+  overflow: hidden;
+  color: #fff;
+  border: none !important;
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.carousel-area .carousel-arrow.left {
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.carousel-area .carousel-arrow.right {
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.carousel-area .carousel-dots {
+  position: absolute;
+  left: 0; right: 0; bottom: 10px;
+  display: flex; justify-content: center; gap: 8px;
+}
+.carousel-area .carousel-dots .dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  border: none; padding: 0; cursor: pointer;
+}
+.carousel-area .carousel-dots .dot.active {
+  background: rgba(255,255,255,0.95);
+}
+
+.carousel-area .carousel-arrow.left:before {
+  width: 40px;
+  height: 40px;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  content: '' !important;
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M24 12L16 20L24 28' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 40px 40px;
+  background-color: transparent;
+  opacity: 1 !important;
+}
+.carousel-area .carousel-arrow.right:before {
+  width: 40px;
+  height: 40px;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  content: '' !important;
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16 12L24 20L16 28' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 40px 40px;
+  background-color: transparent;
+  opacity: 1 !important;
+}
+.carousel-area .slide {
+  transition: transform 0.4s, filter 0.4s;
+  filter: brightness(0.7) grayscale(20%);
+  transform: scale(0.85);
+  opacity: 0.7;
+}
+.carousel-area .slide.is-center {
+  filter: none;
+  transform: scale(1);
+  opacity: 1;
+  z-index: 2;
 }

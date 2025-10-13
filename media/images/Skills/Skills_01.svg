@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="108.21872mm"
+   height="56.191193mm"
+   viewBox="0 0 108.21872 56.191193"
+   version="1.1"
+   id="svg1"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.0449705"
+     inkscape:cx="396.6619"
+     inkscape:cy="561.25984"
+     inkscape:window-width="2560"
+     inkscape:window-height="1369"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <rect
+       x="242.11209"
+       y="426.8063"
+       width="307.1857"
+       height="85.169868"
+       id="rect3" />
+    <rect
+       x="242.11209"
+       y="426.8063"
+       width="307.1857"
+       height="85.169868"
+       id="rect3-5" />
+    <rect
+       x="242.11209"
+       y="426.8063"
+       width="307.1857"
+       height="85.169868"
+       id="rect3-0" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-60.806749,-80.748853)">
+    <rect
+       style="fill:#dd4b25;fill-opacity:1;stroke:#dd4b25;stroke-width:1.9249;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:20.9;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1"
+       width="51.927074"
+       height="25.847792"
+       x="61.769199"
+       y="110.12981"
+       ry="3.8771689" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,1.2659843,1.0127878)"
+       id="text2"
+       style="font-size:64px;font-family:Excalifont, 'Segoe UI Emoji';-inkscape-font-specification:'Excalifont, Segoe UI Emoji';white-space:pre;shape-inside:url(#rect3);fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:20.9;stroke-dasharray:none;stroke-opacity:1"><tspan
+         x="242.11133"
+         y="484.45492"
+         id="tspan2">HTML</tspan></text>
+    <rect
+       style="fill:#006cb8;fill-opacity:1;stroke:#006cb8;stroke-width:1.925;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:20.9;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1-4"
+       width="51.927074"
+       height="25.847792"
+       x="116.1359"
+       y="110.01858"
+       ry="3.8771689" />
+    <rect
+       style="fill:#efd81c;fill-opacity:1;stroke:#efd81c;stroke-width:2.69405;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:20.9;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1-4-6"
+       width="104.83567"
+       height="25.07864"
+       x="62.828648"
+       y="82.095879"
+       ry="3.761796" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,63.734989,0.97571392)"
+       id="text2-5"
+       style="font-size:64px;font-family:Excalifont, 'Segoe UI Emoji';-inkscape-font-specification:'Excalifont, Segoe UI Emoji';white-space:pre;shape-inside:url(#rect3-5);fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:20.9;stroke-dasharray:none;stroke-opacity:1"><tspan
+         x="242.11133"
+         y="484.45492"
+         id="tspan3">CSS</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,14.906731,-28.449668)"
+       id="text2-0"
+       style="font-size:64px;font-family:Excalifont, 'Segoe UI Emoji';-inkscape-font-specification:'Excalifont, Segoe UI Emoji';white-space:pre;shape-inside:url(#rect3-0);fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:20.9;stroke-dasharray:none;stroke-opacity:1"><tspan
+         x="242.11133"
+         y="484.45492"
+         id="tspan4">JavaScript</tspan></text>
+  </g>
+</svg>
