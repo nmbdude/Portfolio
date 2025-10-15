@@ -113,8 +113,9 @@ section{
 }
 
 hr{
-    border-color: #34aeeb;
+    border-color: #000;
     border-width: 1px;
+    margin: 0;
 }
 
 .view-all p{

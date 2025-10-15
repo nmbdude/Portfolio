@@ -1,16 +1,32 @@
+/* =================================================================
+   PROJECT.CSS - Portfolio Project Pages Stylesheet
+   ================================================================= */
+
+/* =================================================================
+   1. SWIPER CAROUSEL STYLES
+   ================================================================= */
+
 .swiper {
   position: relative;
   width: 100%;
   max-width: 700px;
+  min-width: 0; /* override parent's min-width: 0 but allow natural sizing */
   margin: 2rem auto;
   height: 400px;
   background: transparent;
   overflow: hidden; /* hide overflow so only one slide is visible */
 }
+.swiper.full-bleed {
+  width: 100%; /* take full width of grid column */
+  max-width: 700px; /* cap at 700px for stable transforms */
+  min-width: 320px; /* prevent collapse on mobile */
+}
+
 .swiper-wrapper {
   height: 100%;
   display: flex; /* required for Swiper layout when not using bundle CSS */
 }
+
 .swiper-slide {
   display: flex;
   align-items: center;
@@ -18,182 +34,47 @@
   height: 100%;
   flex: 0 0 100%; /* one slide per view width */
 }
+
 .swiper-slide img {
-  max-width: 100%;
-  max-height: 90%;
+  width: 100%;
+  min-height: 100%;
   object-fit: contain;
   margin: 0 auto;
   display: block;
   border-radius: 8px;
+  background-color: #ffff; /* Optional: background color to fill gaps */
 }
 
-main{
-    font-family: open-sans, sans-serif;
-    background-color: transparent;
-}
-
-main ul{
-    font-size: 20px;
-}
-
-/* Override for carousel */
-main ul.list {
-    font-size: initial;
-}
-
-.gallery{
-    display: grid;
-    grid-template-columns: repeat(3, 2fr);
-    grid-gap: 1rem;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-}
-
-.gallery img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.gallery img:hover{
-    cursor: zoom-in;
-}
-
-.lightbox {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    align-content: center;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-.lightbox-content {
-    margin: auto;
-    display: block;
-    align-content: center;
-    width: 80%;
-    max-width: 1500px;
-}
-
-.close {
-    position: absolute;
-    top: 20px;
-    right: 35px;
-    color: #fff;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.close:hover,
-.close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.carousel {
-    box-sizing: content-box;
-    margin: 0 auto;
-    overflow: hidden;
-}
-
-.carousel .carousel-item{
-    width: 550px;
-}
-
-nav, header{
-    width: 100%;
-    padding: 0;
-}
-
-.materialboxed{
-    width: 100%;
-    height: 100%;
-
-}
+/* Swiper Navigation Overrides */
 .swiper .carousel-dots .dot:hover {
   transform: none !important; /* prevent hover shift from global button:hover */
   box-shadow: none; /* dots stay steady without fake offset shadow */
 }
+
 .swiper .carousel-arrow:hover {
   transform: translateY(5%) !important; /* keep vertical centering; block global translateX */
   box-shadow: 0 2px 8px rgba(0,0,0,0.2); /* keep existing */
 }
-h2{
-    font-size: 2em;
-    font-weight: bold;
-    margin: 2rem 0 1rem 0;
+
+/* Force-hide Swiper's built-in arrow glyph so only custom SVG shows */
+.swiper .swiper-button-prev::after,
+.swiper .swiper-button-next::after,
+.swiper-button-prev.swiper-button-prev::after,
+.swiper-button-next.swiper-button-next::after {
+  content: '' !important;
+  display: none !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
-.content{
-    display: grid;
-    grid-template-columns: 1fr 0.5fr;
-    grid-gap: 1rem;
-}
-
-.left{
-    grid-column: 1;
-}
-
-.right{
-    grid-column: 2/4;
-    grid-row: 1 / 3;
-    text-align: right;
-}
-
-button:hover {
-  box-shadow: 1px 1px #FFF, 2px 2px #fff, 3px 3px #FFF;
-  transform: translateX(-3px);
-}
-
-button {
-   color: #fff;
-   background-color: #000;
-   border: 1px solid #fff;
-   border-radius: 4px;
-   padding: 0 15px;
-   cursor: pointer;
-   height: 32px;
-   transition: all 0.2s ease-in-out;
-}
-
-button:focus {
-    outline: none;
-    box-shadow: 0 0 5px #fff;
-    color:#fff;
-    background-color: #000;
-}
-
-.button-white {
-    color: #000;
-    background-color: #fff;
-    border: 1px solid #000;
-    border-radius: 4px;
-    padding: 0 15px;
-    cursor: pointer;
-    height: 32px;
-    font-size: 14px;
-    transition: all 0.2s ease-in-out;
-}
-
-button:focus {
-    outline: none;
-    box-shadow: 0 0 5px #000;
-    color:#fff;
-    background-color: #000;
-}
-
-.button-white:hover {
-    box-shadow: 1px 1px #000, 2px 2px #000, 3px 3px #000;
-    transform: translateX(-3px);
-}
+/* =================================================================
+   2. CAROUSEL NAVIGATION (ARROWS & DOTS)
+   ================================================================= */
 
 .carousel-arrow {
   position: absolute;
@@ -212,172 +93,196 @@ button:focus {
   align-items: center;
   justify-content: center;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  transition: background .25s ease, transform .25s ease, border-color .25s ease, box-shadow .25s ease;
 }
 
-button .carousel-arrow {
-  background: none;
-  color: inherit;
-  box-shadow: none;
-  width: auto;
-  height: auto;
-  font-size: inherit;
-  cursor: pointer;
-}
-
-.carousel-arrow.left::before {
-  content: '';
-  width: 24px;
-  height: 24px;
-  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M24 12L16 20L24 28' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  background-size: 24px 24px;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.carousel-arrow.right::before {
-  content: '';
-  width: 24px;
-  height: 24px;
-  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16 12L24 20L16 28' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  background-size: 24px 24px;
-  background-repeat: no-repeat;
-  background-position: center;
-}
 .carousel-arrow.left {
   left: 8px;
 }
+
 .carousel-arrow.right {
   right: 8px;
 }
+
+.carousel-arrow::before {
+  content: '';
+  display: block;
+  width: 18px;
+  height: 18px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 18px 18px;
+}
+
+.carousel-arrow.left::before {
+  background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14 5L8 12L14 19' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+.carousel-arrow.right::before {
+  background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 5L16 12L10 19' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+.carousel-arrow:hover,
+.carousel-arrow:focus-visible {
+  background: rgba(0,0,0,0.85);
+  border-color: rgba(255,255,255,0.8);
+  outline: none;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.35);
+}
+
+.carousel-arrow:active {
+  transform: translateY(-50%) scale(.9);
+}
+
+.carousel-arrow:focus-visible {
+  box-shadow: 0 0 0 3px rgba(255,255,255,0.4), 0 6px 20px rgba(0,0,0,0.35);
+}
+
 .carousel-dots {
   position: absolute;
-  left: 0; right: 0; bottom: 12px;
-  display: flex; justify-content: center; gap: 8px;
+  left: 0; 
+  right: 0; 
+  bottom: 12px;
+  display: flex; 
+  justify-content: center; 
+  gap: 8px;
   z-index: 10;
 }
+
 .carousel-dots .dot {
-  width: 12px; height: 12px; border-radius: 50%;
+  width: 12px; 
+  height: 12px; 
+  border-radius: 50%;
   background: rgba(255,255,255,0.5);
-  border: none; padding: 0; cursor: pointer;
+  border: none; 
+  padding: 0; 
+  cursor: pointer;
 }
+
 .carousel-dots .dot.active {
   background: rgba(255,255,255,0.95);
 }
 
-sub{
-    font-size: 2em;
-    color: #666;
-    text-align: center;
-    width: 100%;
-    display: block;
-    margin-bottom: 1.5em;
+/* =================================================================
+   3. MAIN CONTENT & LAYOUT
+   ================================================================= */
+
+main {
+  font-family: open-sans, sans-serif;
+  background-color: transparent;
+}
+
+main ul {
+  font-size: 20px;
+}
+
+/* Override for carousel */
+main ul.list {
+  font-size: initial;
+}
+
+nav, header {
+  width: 100%;
+  padding: 0;
+}
+
+.hamburger{
+  display: none;
+}
+
+h2 {
+  font-size: 2em;
+  font-weight: bold;
+  margin: 2rem 0 0.5rem 0;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr;
+  grid-gap: 1rem;
+}
+
+/* Allow grid children to shrink to avoid overflow, except swiper */
+.content > div:not(:has(.swiper)) { min-width: 0; }
+
+/* Tech stack chip row */
+.tech-tags { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.tech-tags span { margin: 4px 8px 0 0; }
+
+/* Clip any accidental horizontal overflow within sections */
+main section { overflow-x: clip; }
+
+.content div ul {
+  padding-left: 20px;
 }
 
 .content div ul li {
-    list-style: disc;
+  list-style: disc;
 }
 
-.technologies{
-    display: flex; 
-    flex-direction: column;
+.left {
+  grid-column: 1;
+}
+
+.right {
+  grid-column: 2/4;
+  grid-row: 1 / 3;
+  text-align: right;
+}
+
+.technologies {
+  display: flex; 
+  flex-direction: column;
 }
 
 span {
-    background-color: #d1d1d1;
-    width: fit-content;
-    margin: 0 auto;
-    padding: 5px 7px;
-    border-radius: 4px;
-    margin: 0.25em auto;
-    font-size: 0.5em;
-}
-
-.content div ul{
-    padding-left: 20px;
+  background-color: #d1d1d1;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 5px 7px;
+  border-radius: 4px;
+  margin: 0.25em auto;
+  font-size: 0.5em;
 }
 
 .skills-illustration {
   width: 50%;
   height: auto;
-  
 }
 
-
-/* Clean carousel styles */
-/* .carousel-area {
+sub{
   text-align: center;
-  margin: 2rem 0;
-  position: relative;
+  font-size: 2em;
+  margin: 0 auto 1.5em auto;
+  display: block;
+  color: grey;
 }
 
-.carousel-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.7);
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  font-size: 20px;
-  cursor: pointer;
-  z-index: 10;
-  transition: background-color 0.3s ease;
+.tech-tags{
+  margin-top: 2em;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
-.carousel-arrow.left {
-  left: 20px;
+.tech-tags img {
+  height: 8em;
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 4px;
+  transition: transform 0.2s ease-in-out;
+  margin: 0 40px 0 0;
 }
 
-.carousel-arrow.right {
-  right: 20px;
+.tech-tags img:hover {
+  transform: scale(1.1);
 }
 
-.carousel-arrow:hover {
-  background: rgba(0,0,0,0.9);
-}
+/* =================================================================
+   5. LIGHTBOX
+   ================================================================= */
 
-.carousel-item {
-  display: inline-block !important;
-  margin: 0 10px;
-  border: 2px solid #333;
-  border-radius: 8px;
-  overflow: hidden;
-  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  vertical-align: top;
-}
-
-.carousel-item.side {
-  width: 350px !important;
-  height: 280px !important;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  opacity: 0.7 !important;
-  transform: scale(0.9) !important;
-}
-
-.carousel-item.act {
-  width: 700px !important;
-  height: 400px !important;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-  transform: scale(1) !important;
-  cursor: pointer;
-  opacity: 1 !important;
-}
-
-.carousel-item.act:hover {
-  transform: scale(1.02) !important;
-  box-shadow: 0 12px 24px rgba(0,0,0,0.4);
-}
-
-.carousel-item img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover;
-  transition: opacity 0.4s ease;
-  display: block !important;
-} */
-
-/* Lightbox styles */
 .lightbox {
   display: none;
   position: fixed;
@@ -418,7 +323,95 @@ span {
   transition: transform 0.3s ease;
 }
 
-/* Carousel area styles (vanilla) */
+/* =================================================================
+   6. BUTTONS
+   ================================================================= */
+
+button {
+  color: #fff;
+  background-color: #000;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  padding: 0 15px;
+  cursor: pointer;
+  height: 32px;
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+  box-shadow: 1px 1px #FFF, 2px 2px #fff, 3px 3px #FFF;
+  transform: translateX(-3px);
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 5px #fff;
+  color: #fff;
+  background-color: #000;
+}
+
+.button-demo {
+  display: block;
+  color: #000;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 4px;
+  font-size: 1.2em;
+  padding: 0 15px;
+  cursor: pointer;
+  height: fit-content;
+  line-height: 1.5;
+  padding: 0.5em 1em;
+  transition: all 0.2s ease-in-out;
+  margin: 0 auto;
+  display: block;
+}
+
+.button-demo:hover {
+  box-shadow: 1px 1px #000, 2px 2px #000, 3px 3px #000;
+  transform: translateX(-3px);
+}
+
+.button-demo:focus {
+  outline: none;
+  box-shadow: 0 0 5px #000;
+  color: #fff;
+  background-color: #000;
+}
+
+button .carousel-arrow {
+  background: none;
+  color: inherit;
+  box-shadow: none;
+  width: auto;
+  height: auto;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+/* =================================================================
+   7. MATERIALIZE OVERRIDES
+   ================================================================= */
+
+.carousel {
+  box-sizing: content-box;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carousel .carousel-item {
+  width: 550px;
+}
+
+.materialboxed {
+  width: 100%;
+  height: 100%;
+}
+
+/* =================================================================
+   8. CAROUSEL AREA (FULL-BLEED VARIANT)
+   ================================================================= */
+
 .carousel-area {
   margin: 2rem auto;
   width: 100%;
@@ -427,7 +420,6 @@ span {
   position: relative;
 }
 
-/* Full-bleed variant to span edge-to-edge and minimize whitespace */
 .carousel-area.full-bleed {
   max-width: 100%;
   margin-left: 0;
@@ -436,19 +428,30 @@ span {
   padding-right: 0;
 }
 
-/* Vanilla carousel layout */
-
-
-.carousel-area .slide {
-  /* Only Swiper's .swiper-slide layout, no custom flex/height/padding */
-  overflow: hidden;
-  border-radius: 8px;
+.carousel-area { 
+  margin-left: 0; 
+  margin-right: 0; 
 }
 
-/* Compensate slide padding so the outer edges align nicely */
-/* Compensate slide padding so edges align */
-.carousel-area { margin-left: 0; margin-right: 0; }
-.carousel-area .carousel-track { margin: 0 -24px; }
+.carousel-area .carousel-track { 
+  margin: 0 -24px; 
+}
+
+.carousel-area .slide {
+  overflow: hidden;
+  border-radius: 8px;
+  transition: transform 0.4s, filter 0.4s;
+  filter: brightness(0.7) grayscale(20%);
+  transform: scale(0.85);
+  opacity: 0.7;
+}
+
+.carousel-area .slide.is-center {
+  filter: none;
+  transform: scale(1);
+  opacity: 1;
+  z-index: 2;
+}
 
 .carousel-area .slide img {
   display: block;
@@ -458,8 +461,9 @@ span {
   object-fit: contain;
   border-radius: 8px;
 }
+
 .carousel-area .carousel-arrow {
-  z-index: 5; /* ensure arrows sit above slides */
+  z-index: 5;
   display: flex !important;
   align-items: center;
   justify-content: center;
@@ -475,28 +479,17 @@ span {
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
+
 .carousel-area .carousel-arrow.left {
   left: 12px;
   top: 50%;
   transform: translateY(-50%);
 }
+
 .carousel-area .carousel-arrow.right {
   right: 12px;
   top: 50%;
   transform: translateY(-50%);
-}
-.carousel-area .carousel-dots {
-  position: absolute;
-  left: 0; right: 0; bottom: 10px;
-  display: flex; justify-content: center; gap: 8px;
-}
-.carousel-area .carousel-dots .dot {
-  width: 10px; height: 10px; border-radius: 50%;
-  background: rgba(255,255,255,0.5);
-  border: none; padding: 0; cursor: pointer;
-}
-.carousel-area .carousel-dots .dot.active {
-  background: rgba(255,255,255,0.95);
 }
 
 .carousel-area .carousel-arrow.left:before {
@@ -516,6 +509,7 @@ span {
   background-color: transparent;
   opacity: 1 !important;
 }
+
 .carousel-area .carousel-arrow.right:before {
   width: 40px;
   height: 40px;
@@ -533,15 +527,78 @@ span {
   background-color: transparent;
   opacity: 1 !important;
 }
-.carousel-area .slide {
-  transition: transform 0.4s, filter 0.4s;
-  filter: brightness(0.7) grayscale(20%);
-  transform: scale(0.85);
-  opacity: 0.7;
+
+.carousel-area .carousel-dots {
+  position: absolute;
+  left: 0; 
+  right: 0; 
+  bottom: 10px;
+  display: flex; 
+  justify-content: center; 
+  gap: 8px;
 }
-.carousel-area .slide.is-center {
-  filter: none;
-  transform: scale(1);
-  opacity: 1;
-  z-index: 2;
+
+.carousel-area .carousel-dots .dot {
+  width: 10px; 
+  height: 10px; 
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  border: none; 
+  padding: 0; 
+  cursor: pointer;
 }
+
+.carousel-area .carousel-dots .dot.active {
+  background: rgba(255,255,255,0.95);
+}
+
+/* =================================================================
+   9. MEDIA QUERIES
+   ================================================================= */
+
+   @media screen and (max-width: 1600px) {
+      .nav-menu {
+        display: none;
+      }
+      .hamburger {
+        display: block;
+        margin-right: 16px;
+      }
+      button:focus {
+        box-shadow: 1px 1px #FFF, 2px 2px #fff, 3px 3px #FFF;
+        transform: translateX(-3px);
+      }
+      .content {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+      }
+
+      .button-demo {
+        height: 50px;
+        font-size: 1.5em;
+        width: fit-content;
+        white-space: nowrap;
+      }
+
+      .button-demo:focus{
+        background-color: #fff;
+        box-shadow: 1px 1px #000, 2px 2px #000, 3px 3px #000;
+        transform: translateX(-3px);
+      }
+   }
+
+   @media screen and (min-width: 2300px) {
+      .content{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+      }
+      section{
+        max-width: 1600px;
+        margin: 1em auto;
+      }
+   }
+
+  @media (max-width: 900px) {
+    .content { grid-template-columns: 1fr; }
+    .swiper { height: clamp(220px, 56vw, 400px); }
+  }

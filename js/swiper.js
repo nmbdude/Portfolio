@@ -8,28 +8,30 @@ document.addEventListener('DOMContentLoaded', function() {
   var nextEl = container.querySelector('.carousel-arrow.right');
   var dotsEl = container.querySelector('.carousel-dots');
 
+  if(!prevEl || !nextEl){
+    console.warn('Swiper nav elements missing', {prevEl, nextEl});
+  }
   var swiper = new Swiper(container, {
     slidesPerView: 1,
     grabCursor: true,
-    effect: 'creative',
+    effect: "creative",
     creativeEffect: {
       prev: {
-          shadow: true,
-          origin: "left center",
-          translate: ["-5%", 0, -200],
-          rotate: [0, 100, 0],e
-        },
-        next: {
-          origin: "right center",
-          translate: ["5%", 0, -200],
-          rotate: [0, -100, 0],
-        }
+        shadow: true,
+        origin: "left center",
+        translate: ["-5%", 0, -200],
+        rotate: [0, 100, 0],
+      },
+      next: {
+        shadow: true,
+        origin: "right center",
+        translate: ["5%", 0, -200],
+        rotate: [0, -100, 0],
+      },
     },
-    centeredSlides: true,
-    spaceBetween: 48,
     navigation: {
-      nextEl: nextEl,
-      prevEl: prevEl,
+    nextEl: nextEl || '.swiper-button-next',
+    prevEl: prevEl || '.swiper-button-prev',
     },
     pagination: {
       el: dotsEl,
@@ -37,7 +39,11 @@ document.addEventListener('DOMContentLoaded', function() {
       bulletClass: 'dot',
       bulletActiveClass: 'active',
       renderBullet: function (index, className) {
-        return '<button type="button" class="' + className + '" aria-label="Go to slide ' + (index + 1) + '"></button>';
+        // Only render bullets for first 3 slides (hide the dummy 4th slide bullet)
+        if (index < 3) {
+          return '<button type="button" class="' + className + '" aria-label="Go to slide ' + (index + 1) + '"></button>';
+        }
+        return '';
       }
     },
     on: {
@@ -48,8 +54,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
       }
     }
+    
   });
-
+console.log(swiper.version);
   // Lightbox open on image click
   document.querySelectorAll('.swiper-slide img').forEach(img => {
     img.addEventListener('click', function() {

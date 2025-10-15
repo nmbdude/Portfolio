@@ -10,15 +10,16 @@
     <link rel="stylesheet" href="../../css/index.css">
     <link rel="stylesheet" href="../../css/work.css">
     <link rel="stylesheet" href="../../css/project.css">
-    <!-- Swiper 6 CSS (CDN) -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper@6/swiper-bundle.min.css">
+    <!-- Swiper 8 CSS (CDN) -->
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+/>
     <link href="https://unpkg.com/pattern.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
-    
-    
 </head>
 
 <body class="pattern-cross-dots-md" style="background-color: rgba(190, 190, 190, 0.473);">
@@ -44,17 +45,14 @@
             <h3 id="title" style="font-family: 'Google Sans Code';">Amiibo Center</h3>
 
             <sub>Search. Discover. Collect.</sub>
-            <button class="button-white" style="margin: auto auto; display: block; font-size: 15px;"
+            <button class="button-demo"
                 onclick="window.open('https://people.rit.edu/nmb7888/235/project2/', '_blank')">Try it Out</button>
         </section>
         <section>
             <div class="content">
                 <div>
-                    <h2>Summary
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-                    </h2>
+                    <h2>Summary</h2>
+                    <hr>
                     <ul>
                         <li>Built a responsive web app for searching Amiibo characters by name, series, and type</li>
                         <li>Integrated the Amiibo API to fetch and display dynamic character data</li>
@@ -63,32 +61,54 @@
                         <li>Focused on clean UI, intuitive filters, and seamless data integration</li>
                     </ul>
                 </div>
-                <!-- <img class="skills-illustration" src="../../media/images/Skills/Skills_01.svg" alt="Skills Illustration"> -->
+                <div>
+                    <h2>Build Breakdown</h2>
+                    <hr>
+                    <ul>
+                        <li><b>HTML:</b> semantic elements for accessible markup and future scalability</li>
+                        <li><b>CSS:</b> implemented responsive design principles for optimal viewing on all devices</li>
+                        <li><b>JavaScript:</b> ensured cross-browser compatibility and optimized performance</li>
+                    </ul>
+                </div>
             </div>
-            <h2 class="center">Gallery</h2>
-
-            <!-- Slick carousel - full-bleed to reduce whitespace -->
-            <div class="swiper full-bleed">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <img id="left-img" src="../../media/images/project-screenshots/amiibo-center/amiibo-homepage.png"
-                            alt="Amiibo Center Screenshot"
-                            style="width: 100%; object-fit: contain; display: block;">
-                    </div>
-                    <div class="swiper-slide">
-                        <img class="center-img" src="../../media/images/project-screenshots/amiibo-center/amiibo-result.png"
-                            alt="Amiibo Center Screenshot"
-                            style="width: 100%; object-fit: contain; display: block;">
-                    </div>
-                    <div class="swiper-slide">
-                        <img id="right-img" src="../../media/images/project-screenshots/amiibo-center/amiibo-search.png"
-                            alt="Amiibo Center Screenshot"
-                            style="width: 100%; object-fit: contain; display: block;">
+            <div class="content">
+                <div>
+                    <h2>Tech Stack</h2>
+                    <hr>
+                    <div class="tech-tags">
+                        <img src="../../media/images/tech-stacks/html.png" alt="HTML">
+                        <img src="../../media/images/tech-stacks/css.png" alt="CSS">
+                        <img src="../../media/images/tech-stacks/js.png" alt="JavaScript">
+                        <img src="../../media/images/tech-stacks/api.png" alt="API Integration">
                     </div>
                 </div>
-                <button class="carousel-arrow left" type="button" aria-label="Previous slide"></button>
-                <button class="carousel-arrow right" type="button" aria-label="Next slide"></button>
-                <div class="carousel-dots"></div>
+                <div>
+                    <h2 class="">Gallery</h2>
+                    <hr>
+                    <!-- Slick carousel - full-bleed to reduce whitespace -->
+                    <div class="swiper full-bleed">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="../../media/images/project-screenshots/amiibo-center/amiibo-homepage.png"
+                                    alt="Amiibo Center Screenshot">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="../../media/images/project-screenshots/amiibo-center/amiibo-result.png"
+                                    alt="Amiibo Center Screenshot">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="../../media/images/project-screenshots/amiibo-center/amiibo-search.png"
+                                    alt="Amiibo Center Screenshot">
+                            </div>
+                            <div class="swiper-slide" style="pointer-events: none;">
+                                <img src="../../media/images/project-screenshots/amiibo-center/amiibo-homepage.png"
+                                    alt="Amiibo Center Screenshot">
+                            </div>
+                        </div>
+                        <button class="carousel-arrow left" type="button" aria-label="Previous slide"></button>
+                        <button class="carousel-arrow right" type="button" aria-label="Next slide"></button>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -99,8 +119,8 @@
         <img class="lightbox-content" id="lightbox-img"
             style="max-width: 90%; max-height: 90%; object-fit: contain; border-radius: 8px; box-shadow: 0 8px 32px rgba(0,0,0,0.8); transition: transform 0.3s ease;">
     </div>
-    <!-- Swiper 6 JS (CDN) -->
-    <script src="https://unpkg.com/swiper@6/swiper-bundle.min.js"></script>
+    <!-- Swiper 8 JS (CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="../../js/swiper.js"></script>
     <script>
         function toggleMenu() {
