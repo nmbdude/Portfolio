@@ -56,7 +56,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
   });
-console.log(swiper.version);
   // Lightbox open on image click
   document.querySelectorAll('.swiper-slide img').forEach(img => {
     img.addEventListener('click', function() {

@@ -42,7 +42,7 @@ h2{
     font-size: 30px;
 }
 
-#info, section {
+#info {
     display: flex;
     margin: 0 auto;
     width: 100%;
@@ -72,10 +72,10 @@ p{
     margin-left: 2rem;
 }
 
-section{
+/* section{
     display: block;
     padding: 5rem;
-}
+} */
 
 .work{
     display: grid;
