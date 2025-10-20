@@ -41,7 +41,6 @@
   object-fit: contain;
   margin: 0 auto;
   display: block;
-  border-radius: 8px;
   background-color: #ffff; /* Optional: background color to fill gaps */
 }
 
@@ -285,6 +284,8 @@ sub{
 .tech-tags img:hover {
   transform: scale(1.1);
 }
+
+/* .image-list img { border-radius: 8px; } */
 
 /* =================================================================
    5. LIGHTBOX

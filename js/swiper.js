@@ -63,3 +63,40 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+// Lightweight lightbox helpers used across project pages
+// Exposed globally so inline onclick handlers can call them
+if (typeof window.openLightbox !== 'function') {
+  (function() {
+    function escHandler(e) {
+      if (e.key === 'Escape') {
+        window.closeLightbox();
+      }
+    }
+
+    window.openLightbox = function(src) {
+      var lightbox = document.getElementById('lightbox');
+      var lightboxImg = document.getElementById('lightbox-img');
+      if (!lightbox || !lightboxImg) return;
+      lightboxImg.src = src || lightboxImg.src;
+      lightbox.style.display = 'flex';
+      // Fade in
+      requestAnimationFrame(function() {
+        lightbox.style.opacity = '1';
+      });
+      document.addEventListener('keydown', escHandler);
+    };
+
+    window.closeLightbox = function() {
+      var lightbox = document.getElementById('lightbox');
+      var lightboxImg = document.getElementById('lightbox-img');
+      if (!lightbox) return;
+      lightbox.style.opacity = '0';
+      setTimeout(function() {
+        lightbox.style.display = 'none';
+        if (lightboxImg) lightboxImg.src = '';
+      }, 300);
+      document.removeEventListener('keydown', escHandler);
+    };
+  })();
+}
