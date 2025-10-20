@@ -21,46 +21,41 @@
         <!-- Hamburger shown on small screens (CSS .hamburger) -->
         <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">☰</button>
         <ul class="nav-menu">
-            <li><button class="nav-button" onclick="window.location.href='../../index.html'">Home</button></li>
-            <li><button class="nav-button" onclick="window.location.href='../../academic-work.html'">Academic Work</button></li>
-            <li><button class="nav-button" onclick="window.location.href='../../personal-work.html'">Personal Work</button></li>
+            <li><button class="nav-button" onclick="window.location.href='../../index.html'">Work</button></li>
             <li><button class="nav-button" onclick="window.location.href='../../about-me.html'">About Me</button></li>
             <li><button class="nav-button" onclick="window.location.href='#footer'">Contact</button></li>
         </ul>
     </nav>
 </header>
 <main>
-    
-    <section>
-        <h2 style="margin-bottom: 0">Highlighted Personal Work</h2>
-        <hr style="margin: 0.5rem 0 1rem 0">
-        <div class="work">
-            <a href="project-pages/personal/the-lofi-cafe.html"
-               style="background-image: url(media/images/project-covers/lofi-cafe-cover.png);"><p
-                    class="whiteHoverTitle">The Lofi Cafe</p></a>
-            <a href="project-pages/personal/around-the-block.html"
-               style="background-image: url(media/images/project-covers/around-the-block-cover.png);"><p
-                    class="whiteHoverTitle">Around the Block</p></a>
-            <div class="view-all">
-                <p id="view-all-personal">View<br>All</p>
+    <h2 class="section-title">Work</h2>
+    <div class="work-grid">
+        <div class="work-item" style="background-image: url(media/images/project-covers/amiibo-center-cover.png);">
+            <div class="overlay">
+                <h3 class="title-project-overlay">Amiibo Center</h3>
             </div>
         </div>
-    </section>
-    <section>
-        <h2 style="margin-bottom: 0">Highlighted Academic Work</h2>
-        <hr style="margin: 0.5rem 0 1rem 0">
-        <div class="work">
-            <a href="project-pages/academic/amiibo-center.html"
-               style="background-image: url(media/images/project-covers/amiibo-center-cover.png);"><p
-                    class="blackHoverTitle">Amiibo Finder</p></a>
-            <a href="project-pages/academic/man-v-machine.html"
-               style="background-image: url(media/images/project-covers/man-v-machine-cover.png);"><p
-                    class="whiteHoverTitle">Man V Machine</p></a>
-            <div class="view-all">
-                <p id="view-all-academic">View<br>All</p>
+        <div class="work-item" style="background-image: url(media/images/project-covers/around-the-block-cover.png);">
+            <div class="overlay">
+                <h3 class="title-project-overlay">Around the Block</h3>
             </div>
         </div>
-    </section>
+        <div class="work-item" style="background-image: url(media/images/project-covers/lofi-cafe-cover.png);">
+            <div class="overlay">
+                <h3 class="title-project-overlay">LoFi Cafe</h3>
+            </div>
+        </div>
+        <div class="work-item" style="background-image: url(media/images/project-covers/man-v-machine-cover.png);">
+            <div class="overlay">
+                <h3 class="title-project-overlay">Man vs. Machine</h3>
+            </div>
+        </div>
+        <div class="work-item" style="background-image: url(media/images/project-covers/memory-blast-cover.png);">
+            <div class="overlay">
+                <h3 class="title-project-overlay">Memory Blast</h3>
+            </div>
+        </div>
+    </div>
 </main>
 <footer id="footer">
     <h2>Contact</h2>
