@@ -72,6 +72,194 @@ p{
     margin-left: 2rem;
 }
 
+.work-item-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: lightgrey;
+  border-radius: 5px;
+  padding: .5rem;
+}
+
+.work-item-wrapper:hover {
+  cursor: pointer;
+  background-color: #bfbfbf;
+  transition: background-color 0.2s;
+}
+
+.work-item-caption {
+  text-align: left;
+  font-size: 1.5em;
+  margin: 0;
+  padding: 0 0.5rem;
+}
+
+.work-item-tag-html{
+    text-align: left;
+    font-size: 1em;
+    margin: 0;
+    padding: 0 0.5rem;
+    background-color: #e44d26;
+    color: white;
+    width: fit-content;
+    border-radius: 5px;
+}
+
+.work-item-tag-css{
+    text-align: left;
+    font-size: 1em;
+    margin: 0;
+    padding: 0 0.5rem;
+    background-color: #264de4;
+    color: white;
+    width: fit-content;
+    border-radius: 5px;
+}
+
+.work-item-tag-js{
+    text-align: left;
+    font-size: 1em;
+    margin: 0;
+    padding: 0 0.5rem;
+    background-color: #f0db4f;
+    color: black;
+    width: fit-content;
+    border-radius: 5px;
+}
+
+.work-item-tag-api{
+    text-align: left;
+    font-size: 1em;
+    margin: 0;
+    padding: 0 0.5rem;
+    background-color: #000000;
+    color: white;
+    width: fit-content;
+    border-radius: 5px;
+}
+
+.work-item-tag-unreal{
+    text-align: left;
+    font-size: 1em;
+    margin: 0;
+    padding: 0 0.5rem;
+    background-color: #000000;
+    color: white;
+    width: fit-content;
+    border-radius: 5px;
+}
+
+.work-item-tag-blender{
+    text-align: left;
+    font-size: 1em;
+    margin: 0;
+    padding: 0 0.5rem;
+    background-color: #f5792a;
+    color: white;
+    width: fit-content;
+    border-radius: 5px;
+}
+
+.work-item-tag-azure{
+    text-align: left;
+    font-size: 1em;
+    margin: 0;
+    padding: 0 0.5rem;
+    background-color: #0089d6;
+    color: white;
+    width: fit-content;
+    border-radius: 5px;
+}
+
+.work-item-tag-cpp{
+    text-align: left;
+    font-size: 1em;
+    margin: 0;
+    padding: 0 0.5rem;
+    background-color: #00599c;
+    color: white;
+    width: fit-content;
+    border-radius: 5px;
+}
+
+.work-item-tag-monogame{
+    text-align: left;
+    font-size: 1em;
+    margin: 0;
+    padding: 0 0.5rem;
+    background-color: #e73c00;
+    color: white;
+    width: fit-content;
+    border-radius: 5px;
+}
+
+.work-item-tag-winforms{
+    text-align: left;
+    font-size: 1em;
+    margin: 0;
+    padding: 0 0.5rem;
+    background-color: #019fdf;
+    color: white;
+    width: fit-content;
+    border-radius: 5px;
+}
+
+.work-item-tag-csharp{
+    text-align: left;
+    font-size: 1em;
+    margin: 0;
+    padding: 0 0.5rem;
+    background-color: #68217a;
+    color: white;
+    width: fit-content;
+    border-radius: 5px;
+}
+
+.work-item-tag-github{
+    text-align: left;
+    font-size: 1em;
+    margin: 0;
+    padding: 0 0.5rem;
+    background-color: #333333;
+    color: white;
+    width: fit-content;
+    border-radius: 5px;
+}
+
+.work-item-tag-unity{
+    text-align: left;
+    font-size: 1em;
+    margin: 0;
+    padding: 0 0.5rem;
+    background-color: #000000;
+    color: white;
+    width: fit-content;
+    border-radius: 5px;
+}
+
+.work-item-tag-pixi{
+    text-align: left;
+    font-size: 1em;
+    margin: 0;
+    padding: 0 0.5rem;
+    background-color: #e72264;
+    color: white;
+    width: fit-content;
+    border-radius: 5px;
+}
+
+.work-item-description p{
+    font-size: 1.2em;
+    margin: 0;
+    padding: 0 0.5rem;
+}
+
+.work-item-tags{
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.2em 0.5rem 0;
+}
+
 .work{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -93,7 +281,7 @@ p{
 
 .work a:hover{
     cursor: pointer;
-    background-color: #3c3c3c;
+    background-color: #afafaf28;
     background-blend-mode: overlay;
     transition: background-color 0.2s;
 }
@@ -236,12 +424,13 @@ body{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    border: 5px solid #3c3c3c;
+    /* border: 5px solid lightgrey; */
+    border-radius: 5px;
 }
 
 .work-item:hover{
     cursor: pointer;
-    background-color: #3c3c3c;
+    background-color: #4b4b4b;
     background-blend-mode: overlay;
     transition: background-color 0.2s;
 }
@@ -270,4 +459,6 @@ body{
     color: #fff;
     padding: 10px;
     text-align: center;
+    margin: 0;
+    border-radius: 0 0 5px 5px;
 }
