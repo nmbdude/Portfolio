@@ -248,6 +248,28 @@ p{
     border-radius: 5px;
 }
 
+.work-item-tag-jira{
+    text-align: left;
+    font-size: 1em;
+    margin: 0;
+    padding: 0 0.5rem;
+    background-color: #417eef;
+    color: white;
+    width: fit-content;
+    border-radius: 5px;
+}
+
+.work-item-tag-perforce{
+    text-align: left;
+    font-size: 1em;
+    margin: 0;
+    padding: 0 0.5rem;
+    background-color: #4508f5;
+    color: white;
+    width: fit-content;
+    border-radius: 5px;
+}
+
 .work-item-description p{
     font-size: 1.2em;
     margin: 0;
@@ -258,6 +280,36 @@ p{
     display: flex;
     gap: 0.5rem;
     padding: 0.2em 0.5rem 0;
+}
+
+.academic-project-badge{
+    background-color: #e6722c;
+    width: fit-content;
+    color: white;
+    padding: 5px 10px;
+    font-family: 'open-sans', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.personal-project-badge{
+    background-color: #34aeeb;
+    width: fit-content;
+    color: white;
+    padding: 5px 10px;
+    font-family: 'open-sans', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.personal-project-badge p{
+    margin: 0;
+}
+
+.academic-project-badge p{
+    margin: 0;
 }
 
 .work{
