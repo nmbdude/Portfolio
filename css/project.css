@@ -169,6 +169,7 @@
 main {
   font-family: open-sans, sans-serif;
   background-color: transparent;
+  padding-top: 0;
 }
 
 main ul {
@@ -319,6 +320,10 @@ sub{
   cursor: pointer;
   transition: 0.3s;
   z-index: 1001;
+  height: fit-content;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
 }
 
 .lightbox .close:hover {
@@ -651,7 +656,7 @@ button .carousel-arrow {
       }
 
       .name{
-        margin: auto !important;
+        margin: auto;
       }
       h3{
         font-size: 5em !important;

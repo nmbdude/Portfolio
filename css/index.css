@@ -431,13 +431,6 @@ footer{
     white-space: nowrap;
 }
 
-header{
-    display: flex;
-    padding: 0 2rem;
-    background-color: #34aeeb;
-    font-family: open-sans, sans-serif;
-    font-weight: normal;
-}
 
 .name{
     font-size: 3em;
@@ -467,6 +460,7 @@ body{
     margin-bottom: 2rem;
     width: 100%;
     height: auto;
+    background-color: white;
 }
 
 .work-item{
@@ -479,7 +473,12 @@ body{
     /* border: 5px solid lightgrey; */
     border-radius: 5px;
 }
-
+main{
+            max-width: 1600px;
+            background-color: white;
+            margin: auto;
+            padding: 40px;
+        }
 .work-item:hover{
     cursor: pointer;
     background-color: #4b4b4b;
@@ -513,4 +512,34 @@ body{
     text-align: center;
     margin: 0;
     border-radius: 0 0 5px 5px;
+}
+
+@media screen and (max-width: 1400px) {
+    .work-grid {
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 0.5rem;
+        background-color: white;
+    }
+    main{
+        padding: 20px;
+        max-width: 1600px;
+        background-color: white;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    nav ul li {
+        margin-right: 1rem;
+        font-size: 20px;
+    }
+    nav h1 {
+        font-size: 20px;
+    }
+    .name {
+        margin-left: 1rem;
+    }
+    .nav-button {
+        font-size: 16px;
+    }
 }

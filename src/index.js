@@ -1,9 +1,9 @@
-import './swiper.js';
-import './materialize.js';
-import './materialize.min.js';
-import './project.js';
-import './redirect.js';
-import './swiper.min.js';
+// import './swiper.js';
+// import './materialize.js';
+// import './materialize.min.js';
+// import './project.js';
+// import './redirect.js';
+// import './swiper.min.js';
 
 document.addEventListener("DOMContentLoaded", function() {
     const workAnchors = document.querySelectorAll('.work a');
@@ -16,17 +16,6 @@ document.addEventListener("DOMContentLoaded", function() {
         anchor.style.backgroundRepeat = 'no-repeat';
         anchor.style.backgroundSize = 'cover';
     });
-});
-
-let viewAllAcademic = document.querySelector('#view-all-academic');
-let viewAllPersonal = document.querySelector('#view-all-personal');
-
-viewAllAcademic.addEventListener('click', function() {
-    window.open("academic-work.html", "_self");
-});
-
-viewAllPersonal.addEventListener('click', function() {
-    window.open("personal-work.html", "_self");
 });
 
 // Mobile nav toggle: toggle .nav-menu.show when hamburger clicked
