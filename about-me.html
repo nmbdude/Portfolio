@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Nate Boone - About Me</title>
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../../css/materialize.css">
     <link rel="stylesheet" href="../../css/materialize.min.css">
     <link rel="stylesheet" href="../../css/index.css">
@@ -15,10 +15,10 @@
 <header>
     <nav class="pattern-grid-lg bg-slate-900 text-slate-800">
         <h1 class="name"><button onclick="window.location.href='../../index.html'" style="height: auto; font-weight: bold;">Nate Boone</button></h1>
-        <ul>
-            <li><button class="nav-button" onclick="window.location.href='../../index.html'">Home</button></li>
-            <li><button class="nav-button" onclick="window.location.href='../../academic-work.html'">Academic Work</button></li>
-            <li><button class="nav-button" onclick="window.location.href='../../personal-work.html'">Personal Work</button></li>
+        <!-- Hamburger shown on small screens (CSS .hamburger) -->
+        <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+        <ul class="nav-menu">
+            <li><button class="nav-button" onclick="window.location.href='../../index.html'">Work</button></li>
             <li><button class="nav-button" onclick="window.location.href='../../about-me.html'">About Me</button></li>
             <li><button class="nav-button" onclick="window.location.href='#footer'">Contact</button></li>
         </ul>
@@ -26,39 +26,47 @@
 </header>
 <section style="width: auto;">
 <div id="info">
-        <img src="media/images/pfp.jpg" alt="Profile Picture">
-        <div>
-            <h2>About Me</h2>
-            <p>
-                Hi! I'm Nate Boone, and I'm a game design student at the Rochester Institute of Technology. I've been
-                doing game development
-                since I was 7 years old, and I've always known that it's what I've wanted to do. I always make sure to
-                put the best I've got into each and every project that I work on.
-                I've worked on a variety of projects, from my more recent web and desktop based projects to my older
-                game development projects that I made when I was first teaching myself how to code and the development
-                process.
-                I'm always looking for new opportunities to learn and grow as a developer, and I'm excited to see where
-                my career takes me. Here you can see what I've worked on for my classes and personal projects, and the
-                different
-                technologies I've used to make them.
-            </p>
-        </div>
+    <img src="media/images/pfp.jpg" alt="Profile Picture">
+    <div>
+        <h2>About Me</h2>
+        <p>
+            Hi! I'm Nate Boone, and I'm a game design student at the Rochester Institute of Technology. I've been
+            doing game development
+            since I was 7 years old, and I've always known that it's what I've wanted to do. I always make sure to
+            put the best I've got into each and every project that I work on.
+            I've worked on a variety of projects, from my more recent web and desktop based projects to my older
+            game development projects that I made when I was first teaching myself how to code and the development
+            process.
+            I'm always looking for new opportunities to learn and grow as a developer, and I'm excited to see where
+            my career takes me. Here you can see what I've worked on for my classes and personal projects, and the
+            different
+            technologies I've used to make them.
+        </p>
     </div>
+</div>
 </section>
-    <div class="nav-list-overlay">
-        <div class="nav-list">
-            <button class="nav-list-close" aria-label="Close navigation menu">×</button>
-            <ul>
-                <li><button class="nav-button-hamburger" onclick="window.location.href='index.html'">Work</button></li>
-                <li><button class="nav-button-hamburger" onclick="window.location.href='about-me.html'">About Me</button></li>
-                <li><button class="nav-button-hamburger" onclick="window.location.href='#footer'">Contact</button></li>
-            </ul>
-        </div>
+<div class="nav-list-overlay">
+    <div class="nav-list">
+        <button class="nav-list-close" aria-label="Close navigation menu">×</button>
+        <ul>
+            <li><button class="nav-button-hamburger" onclick="window.location.href='index.html'">Work</button></li>
+            <li><button class="nav-button-hamburger" onclick="window.location.href='about-me.html'">About Me</button></li>
+            <li><button class="nav-button-hamburger" onclick="window.location.href='#footer'">Contact</button></li>
+        </ul>
     </div>
-    <script src="src/index.js"></script>
-    <script src="src/redirect.js"></script>
-    <script src="src/materialize.js"></script>
-    <script src="src/materialize.min.js"></script>
-    <script src="src/hamburger.js"></script>
+</div>
+<footer id="footer">
+    <h2 style="margin-top: 0;">Contact</h2>
+    <div class="footer-content">
+        <p class="footer-text">Email: <a href="mailto:nmb7888@rit.edu">nmb7888@rit.edu</a></p>
+        <p class="footer-text"><a href="https://www.linkedin.com/in/nate-boone-/">LinkedIn</a></p>
+        <p class="footer-text">Phone: <a href="tel:773-332-7916">(773) 332-7916</a></p>
+    </div>
+</footer>
+<script src="src/index.js"></script>
+<script src="src/redirect.js"></script>
+<script src="src/materialize.js"></script>
+<script src="src/materialize.min.js"></script>
+<script src="src/hamburger.js"></script>
 </body>
 </html>
