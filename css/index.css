@@ -497,6 +497,70 @@ body{
     transform: scale(1.0);
 }
 
+/* Contact page specific styles */
+.contact-section{
+    flex: 1 1 50%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.contact-info{
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.contact-heading{
+    text-align: center;
+    margin: 0 0 0.5rem 0;
+}
+
+.contact-input{
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.contact-textarea{
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    min-height: 160px;
+    resize: vertical;
+    box-sizing: border-box;
+}
+.section-title{
+    font-family: 'open-sans', sans-serif;
+    font-size: 6em;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center;
+}   
+
+@media screen and (max-width: 900px) {
+    .contact-wrapper{
+        flex-direction: column;
+        align-items: center;
+    }
+    .contact-section{
+        width: 100%;
+        padding: 0.5rem 1rem;
+    }
+    .section-title{font-size: 5em;}
+    .contact-heading{
+        font-size: 2em !important;  
+    }
+}
+
 #info div p{
     font-size: 1.2em;
 }
@@ -542,13 +606,7 @@ main{
     border-radius: 5px 5px 0 0;
 }
 
-.section-title{
-    font-family: 'open-sans', sans-serif;
-    font-size: 6em;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    text-align: center;
-}
+
 
 .title-project-overlay{
     position: absolute;
