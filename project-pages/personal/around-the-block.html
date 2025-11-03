@@ -25,35 +25,30 @@
 
 <body class="pattern-cross-dots-md" style="background-color: rgba(190, 190, 190, 0.473);">
     <header>
-    <nav class="pattern-grid-lg bg-slate-900 text-slate-800">
-        <h1 class="name"><button onclick="window.location.href='../../index.html'" style="height: auto; font-weight: bold;">Nate Boone</button></h1>
-        <!-- Hamburger shown on small screens (CSS .hamburger) -->
-        <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-        <ul class="nav-menu">
-            <li><button class="nav-button" onclick="window.location.href='../../index.html'">Work</button></li>
-            <li><button class="nav-button" onclick="window.location.href='../../about-me.html'">About Me</button></li>
-            <li><button class="nav-button" onclick="window.location.href='#footer'">Contact</button></li>
-        </ul>
-    </nav>
-</header>
-    </main>
+        <nav class="pattern-grid-lg bg-slate-900 text-slate-800">
+            <h1 class="name"><button onclick="window.location.href='../../index.html'" style="height: auto; font-weight: bold;">Nate Boone</button></h1>
+            <!-- Hamburger shown on small screens (CSS .hamburger) -->
+            <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+            <ul class="nav-menu">
+                <li><button class="nav-button" onclick="window.location.href='../../index.html'">Work</button></li>
+                <li><button class="nav-button" onclick="window.location.href='../../about-me.html'">About Me</button></li>
+                <li><button class="nav-button" onclick="window.location.href='../../contact.html'">Contact</button></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
         <div class="nav-list-overlay">
             <div class="nav-list">
                 <button class="nav-list-close" aria-label="Close navigation menu">×</button>
                 <ul>
                     <li><button class="nav-button-hamburger" onclick="window.location.href='../../index.html'">Work</button></li>
                     <li><button class="nav-button-hamburger" onclick="window.location.href='../../about-me.html'">About Me</button></li>
-                    <li><button class="nav-button-hamburger" onclick="window.location.href='#footer'">Contact</button></li>
+                    <li><button class="nav-button-hamburger" onclick="window.location.href='../../contact.html'">Contact</button></li>
                 </ul>
             </div>
         </div>
-        <script src="../../src/index.js"></script>
-        <script src="../../src/redirect.js"></script>
-        <script src="../../src/materialize.js"></script>
-        <script src="../../src/materialize.min.js"></script>
-        <script src="../../src/hamburger.js"></script>
-    </body>
-    </html>
+        <section>
+            <h3 id="title" style="font-family: 'Google Sans Code';">Around The Block</h3>
         </section>
         <section>
             <div class="content">
@@ -61,9 +56,9 @@
                     <h2>Summary</h2>
                     <hr>
                     <ul>
-                        <li>Unreal Engine 5 environment focused on post-processing and visual polish</li>
-                        <li>Level design, gameplay direction, and story owned and iterated by me</li>
-                        <li>Custom post-processing and lighting, with some third-party environment assets</li>
+                        <li>Unreal Engine 5 environment focused on post-processing and visual storytelling</li>
+                        <li>Outside level design, gameplay direction, and story owned and iterated by me</li>
+                        <li>Custom post-processing and lighting, with third-party environment assets</li>
                     </ul>
                 </div>
                 <div class="grid-item">
@@ -137,5 +132,10 @@
             menu.classList.toggle('show');
         }
     </script>
+    <script src="../../src/index.js"></script>
+    <script src="../../src/redirect.js"></script>
+    <script src="../../src/materialize.js"></script>
+    <script src="../../src/materialize.min.js"></script>
+    <script src="../../src/hamburger.js"></script>
 </body>
 </html>

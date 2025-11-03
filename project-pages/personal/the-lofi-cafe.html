@@ -29,45 +29,44 @@
         <ul class="nav-menu">
             <li><button class="nav-button" onclick="window.location.href='../../index.html'">Work</button></li>
             <li><button class="nav-button" onclick="window.location.href='../../about-me.html'">About Me</button></li>
-            <li><button class="nav-button" onclick="window.location.href='#footer'">Contact</button></li>
+            <li><button class="nav-button" onclick="window.location.href='../../contact.html'">Contact</button></li>
         </ul>
     </nav>
-</header>
-    </main>
+    </header>
+    <main>
         <div class="nav-list-overlay">
             <div class="nav-list">
                 <button class="nav-list-close" aria-label="Close navigation menu">×</button>
                 <ul>
                     <li><button class="nav-button-hamburger" onclick="window.location.href='../../index.html'">Work</button></li>
                     <li><button class="nav-button-hamburger" onclick="window.location.href='../../about-me.html'">About Me</button></li>
-                    <li><button class="nav-button-hamburger" onclick="window.location.href='#footer'">Contact</button></li>
+                    <li><button class="nav-button-hamburger" onclick="window.location.href='../../contact.html'">Contact</button></li>
                 </ul>
             </div>
         </div>
-        <script src="../../src/index.js"></script>
-        <script src="../../src/redirect.js"></script>
-        <script src="../../src/materialize.js"></script>
-        <script src="../../src/materialize.min.js"></script>
-        <script src="../../src/hamburger.js"></script>
-    </body>
-    </html>
+        
+        <section>
+            <h3 id="title" style="font-family: 'Google Sans Code';">The Lofi Cafe</h3>
         </section>
         <section>
             <div class="content">
                 <div class="grid-item">
                     <h2>Summary</h2>
                     <hr>
-                    <p>The Lofi Cafe began as a personal project and evolved into an art class piece. I focused on visuals and
-                        interaction: foggy atmosphere, moody lighting, and area-specific color grading. I built the gameplay and
-                        systems (inventory and coffee-making), plus custom models (e.g., the neon coffee sign).</p>
+                    <ul>
+                        <li>Started as a personal project and later became an art class submission</li>
+                        <li>Prioritized visual storytelling with foggy ambiance, moody lighting, and localized color grading</li>
+                        <li>Designed interactive gameplay systems, including inventory management and coffee-making mechanics</li>
+                        <li>Created custom 3D models to enhance immersion, such as the neon coffee sign</li>
+                    </ul>
                 </div>
                 <div class="grid-item">
                     <h2>Build Breakdown</h2>
                     <hr>
                     <ul>
-                        <li><b>Engine:</b> Unreal Engine 5</li>
-                        <li><b>Language:</b> C++ / Blueprints</li>
-                        <li><b>Art:</b> Blender, in-engine post-processing</li>
+                        <li><b>Unreal Engine 5:</b> Chosen for its advanced rendering capabilities and robust toolset, as well as my familiarity with the engine</li>
+                        <li><b>C++ & Blueprints:</b> Used a mixture of C++ for performance-critical systems and Blueprints for rapid prototyping and visual scripting</li>
+                        <li><b>Blender:</b> Utilized for creating custom 3D models and assets to enhance the visual appeal and immersion of the game</li>
                     </ul>
                 </div>
             </div>
@@ -123,6 +122,10 @@
             menu.classList.toggle('show');
         }
     </script>
+    <script src="../../src/index.js"></script>
+        <script src="../../src/redirect.js"></script>
+        <script src="../../src/materialize.js"></script>
+        <script src="../../src/materialize.min.js"></script>
+        <script src="../../src/hamburger.js"></script>
 </body>
-
 </html>
