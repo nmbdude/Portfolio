@@ -32,7 +32,11 @@
         </ul>
     </nav>
 </header>
-    </main>
+    <main>
+        <section>
+            <h3 id="title" style="font-family: 'Google Sans Code';">Memory Blast</h3>
+            <button class="button-demo" onclick="window.open('https://people.rit.edu/nmb7888/235/project3/', '_blank')">Play It!</button>
+        </section>
         <div class="nav-list-overlay">
             <div class="nav-list">
                 <button class="nav-list-close" aria-label="Close navigation menu">×</button>
@@ -43,32 +47,24 @@
                 </ul>
             </div>
         </div>
-        <script src="../../src/index.js"></script>
-        <script src="../../src/redirect.js"></script>
-        <script src="../../src/materialize.js"></script>
-        <script src="../../src/materialize.min.js"></script>
-        <script src="../../src/hamburger.js"></script>
-    </body>
-    </html>
-            <button class="button-demo" onclick="window.open('https://people.rit.edu/nmb7888/235/project3/', '_blank')">Play It!</button>
         </section>
         <section>
             <div class="content">
                 <div class="grid-item">
                     <h2>Summary</h2>
                     <hr>
-                    <p>A casual, grid-based card memory matching game built with PixiJS. Includes a delta-time timer, score
-                        keeping, high-score saving, and randomized card layout. Higher difficulties increase grid size and card
-                        variety. Built entirely from scratch including art assets. Future work: main menu, more art, difficulty
-                        options.</p>
+                    <ul>
+                        <li>Grid based card matching game built with PixiJS</li>
+                        <li>Features a delta-time based timer and scoring system</li>
+                        <li>Includes randomized card layout and high-score saving</li>
+                    </ul>
                 </div>
                 <div class="grid-item">
                     <h2>Build Breakdown</h2>
                     <hr>
                     <ul>
-                        <li><b>Framework:</b> PixiJS</li>
-                        <li><b>Language:</b> JavaScript</li>
-                        <li><b>Systems:</b> Grid generation, matching logic, delta-time timer, scoring/high-score</li>
+                        <li><b>PixiJS:</b> A 2D rendering library for creating interactive graphics and games</li>
+                        <li><b>JavaScript:</b> The programming language used for game logic and interactivity</li>
                     </ul>
                 </div>
             </div>
@@ -77,8 +73,6 @@
                     <h2>Tech Stack</h2>
                     <hr>
                     <div class="tech-tags">
-                        <img src="../../media/images/tech-stacks/html.png" alt="HTML">
-                        <img src="../../media/images/tech-stacks/css.png" alt="CSS">
                         <img src="../../media/images/tech-stacks/js.png" alt="JavaScript">
                         <img src="../../media/images/tech-stacks/pixi.png" alt="PixiJS">
                     </div>
@@ -124,6 +118,11 @@
             menu.classList.toggle('show');
         }
     </script>
+    <script src="../../src/index.js"></script>
+    <script src="../../src/redirect.js"></script>
+    <script src="../../src/materialize.js"></script>
+    <script src="../../src/materialize.min.js"></script>
+    <script src="../../src/hamburger.js"></script>
 </body>
 
 </html>

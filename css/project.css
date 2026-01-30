@@ -1,168 +1,4 @@
 /* =================================================================
-   PROJECT.CSS - Portfolio Project Pages Stylesheet
-   ================================================================= */
-
-/* =================================================================
-   1. SWIPER CAROUSEL STYLES
-   ================================================================= */
-
-.swiper {
-  position: relative;
-  width: 100%;
-  max-width: 700px;
-  min-width: 0; /* override parent's min-width: 0 but allow natural sizing */
-  margin: 2rem auto;
-  height: 400px;
-  background: transparent;
-  overflow: hidden; /* hide overflow so only one slide is visible */
-}
-.swiper.full-bleed {
-  width: 100%; /* take full width of grid column */
-  max-width: 700px; /* cap at 700px for stable transforms */
-  min-width: 320px; /* prevent collapse on mobile */
-}
-
-.swiper-wrapper {
-  height: 100%;
-  display: flex; /* required for Swiper layout when not using bundle CSS */
-}
-
-.swiper-slide {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  flex: 0 0 100%; /* one slide per view width */
-}
-
-.swiper-slide img {
-  width: 100%;
-  min-height: 100%;
-  object-fit: contain;
-  margin: 0 auto;
-  display: block;
-  background-color: #ffff; /* Optional: background color to fill gaps */
-}
-
-/* Swiper Navigation Overrides */
-.swiper .carousel-dots .dot:hover {
-  transform: none !important; /* prevent hover shift from global button:hover */
-  box-shadow: none; /* dots stay steady without fake offset shadow */
-}
-
-.swiper .carousel-arrow:hover {
-  transform: translateY(5%) !important; /* keep vertical centering; block global translateX */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2); /* keep existing */
-}
-
-/* Force-hide Swiper's built-in arrow glyph so only custom SVG shows */
-.swiper .swiper-button-prev::after,
-.swiper .swiper-button-next::after,
-.swiper-button-prev.swiper-button-prev::after,
-.swiper-button-next.swiper-button-next::after {
-  content: '' !important;
-  display: none !important;
-  font-size: 0 !important;
-  line-height: 0 !important;
-  width: 0 !important;
-  height: 0 !important;
-  background: none !important;
-  border: none !important;
-  box-shadow: none !important;
-}
-
-/* =================================================================
-   2. CAROUSEL NAVIGATION (ARROWS & DOTS)
-   ================================================================= */
-
-.carousel-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-5%);
-  z-index: 10;
-  background: rgba(0,0,0,0.85);
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  width: 48px;
-  height: 48px;
-  font-size: 24px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  transition: background .25s ease, transform .25s ease, border-color .25s ease, box-shadow .25s ease;
-}
-
-.carousel-arrow.left {
-  left: 8px;
-}
-
-.carousel-arrow.right {
-  right: 8px;
-}
-
-.carousel-arrow::before {
-  content: '';
-  display: block;
-  width: 18px;
-  height: 18px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 18px 18px;
-}
-
-.carousel-arrow.left::before {
-  background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14 5L8 12L14 19' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-}
-
-.carousel-arrow.right::before {
-  background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 5L16 12L10 19' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-}
-
-.carousel-arrow:hover,
-.carousel-arrow:focus-visible {
-  background: rgba(0,0,0,0.85);
-  border-color: rgba(255,255,255,0.8);
-  outline: none;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.35);
-}
-
-.carousel-arrow:active {
-  transform: translateY(-50%) scale(.9);
-}
-
-.carousel-arrow:focus-visible {
-  box-shadow: 0 0 0 3px rgba(255,255,255,0.4), 0 6px 20px rgba(0,0,0,0.35);
-}
-
-.carousel-dots {
-  position: absolute;
-  left: 0; 
-  right: 0; 
-  bottom: 12px;
-  display: flex; 
-  justify-content: center; 
-  gap: 8px;
-  z-index: 10;
-}
-
-.carousel-dots .dot {
-  width: 12px; 
-  height: 12px; 
-  border-radius: 50%;
-  background: rgba(255,255,255,0.5);
-  border: none; 
-  padding: 0; 
-  cursor: pointer;
-}
-
-.carousel-dots .dot.active {
-  background: rgba(255,255,255,0.95);
-}
-
-/* =================================================================
    3. MAIN CONTENT & LAYOUT
    ================================================================= */
 
@@ -205,13 +41,8 @@ h2 {
 /* Allow grid children to shrink to avoid overflow, except swiper */
 .content > div:not(:has(.swiper)) { min-width: 0; }
 
-/* Tech stack chip row */
-.tech-tags { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
-.tech-tags span { margin: 4px 8px 0 0; }
-
 /* Clip any accidental horizontal overflow within sections */
 main section { 
-  overflow-x: clip; 
   margin: 2em auto;
 }
 
@@ -268,35 +99,95 @@ sub{
   word-break: normal;
 }
 
-.tech-tags{
-  margin-top: 2em;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.tech-tags img {
-  height: 8em;
-  width: auto;
-  display: inline-block;
-  vertical-align: middle;
-  border-radius: 4px;
-  transition: transform 0.2s ease-in-out;
-  margin: 0 40px 0 0;
-}
-
-.tech-tags img:hover {
-  transform: scale(1.1);
-}
-
 footer{
   margin: 0;
   width: 100%;
   max-width: none;
 }
 
-/* .image-list img { border-radius: 8px; } */
+.image-list{
+  display: none;
+}
 
+.gallery{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  grid-column: 1 / -1;
+}
+
+.gallery img{
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  transition: all 0.3s ease;
+}
+
+.gallery img:hover{
+  box-shadow: 0 4px 16px rgba(0,0,0,0.6);
+  transform: scale(1.02);
+}
+
+.dropdown-button{
+  background-color: transparent;
+  color: black;
+  border: none;
+  box-shadow: none;
+  font-size: 2em;
+  cursor: pointer;
+  text-align: left;
+  padding-left: 0;
+  font-weight: bold;
+}
+
+.dropdown-button:focus{
+  outline: none;
+  box-shadow: none;
+  color: black;
+  background-color: transparent;
+}
+
+.dropdown {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    margin-bottom: 1em;
+}
+
+.expand-arrow{
+  width: 24px;
+  height: auto;
+  margin-left: 10px;
+  vertical-align: middle;
+  transition: transform 0.3s ease;
+}
+
+.project-overview ul{
+  padding-left: 20px;
+  margin-top: 0;
+  text-align: center;
+  font-size: 1.3em;
+}
+
+/* =================================================================
+   4. ROLE LIST
+   ================================================================= */
+
+.role-list p{
+  margin: 0 0 0.5rem 0;
+}
+
+.role-list ul{
+  margin-top: 0;
+  padding-left: 20px;
+}
+
+.role-list img{
+  margin: 0 8px 0 0;
+  vertical-align: middle;
+}
 /* =================================================================
    5. LIGHTBOX
    ================================================================= */
@@ -401,183 +292,6 @@ button:focus {
   background-color: #000;
 }
 
-button .carousel-arrow {
-  background: none;
-  color: inherit;
-  box-shadow: none;
-  width: auto;
-  height: auto;
-  font-size: inherit;
-  cursor: pointer;
-}
-
-/* =================================================================
-   7. MATERIALIZE OVERRIDES
-   ================================================================= */
-
-.carousel {
-  box-sizing: content-box;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
-.carousel .carousel-item {
-  width: 550px;
-}
-
-.materialboxed {
-  width: 100%;
-  height: 100%;
-}
-
-/* =================================================================
-   8. CAROUSEL AREA (FULL-BLEED VARIANT)
-   ================================================================= */
-
-.carousel-area {
-  margin: 2rem auto;
-  width: 100%;
-  max-width: 2000px;
-  min-width: 320px;
-  position: relative;
-}
-
-.carousel-area.full-bleed {
-  max-width: 100%;
-  margin-left: 0;
-  margin-right: 0;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.carousel-area { 
-  margin-left: 0; 
-  margin-right: 0; 
-}
-
-.carousel-area .carousel-track { 
-  margin: 0 -24px; 
-}
-
-.carousel-area .slide {
-  overflow: hidden;
-  border-radius: 8px;
-  transition: transform 0.4s, filter 0.4s;
-  filter: brightness(0.7) grayscale(20%);
-  transform: scale(0.85);
-  opacity: 0.7;
-}
-
-.carousel-area .slide.is-center {
-  filter: none;
-  transform: scale(1);
-  opacity: 1;
-  z-index: 2;
-}
-
-.carousel-area .slide img {
-  display: block;
-  margin: 0 auto;
-  max-width: 100%;
-  max-height: 60vh;
-  object-fit: contain;
-  border-radius: 8px;
-}
-
-.carousel-area .carousel-arrow {
-  z-index: 5;
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  opacity: 1 !important;
-  position: absolute;
-  background: rgba(0,0,0,0.85) !important;
-  overflow: hidden;
-  color: #fff;
-  border: none !important;
-  border-radius: 50%;
-  width: 64px;
-  height: 64px;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-}
-
-.carousel-area .carousel-arrow.left {
-  left: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.carousel-area .carousel-arrow.right {
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.carousel-area .carousel-arrow.left:before {
-  width: 40px;
-  height: 40px;
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-  content: '' !important;
-  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M24 12L16 20L24 28' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 40px 40px;
-  background-color: transparent;
-  opacity: 1 !important;
-}
-
-.carousel-area .carousel-arrow.right:before {
-  width: 40px;
-  height: 40px;
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-  content: '' !important;
-  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16 12L24 20L16 28' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 40px 40px;
-  background-color: transparent;
-  opacity: 1 !important;
-}
-
-.carousel-area .carousel-dots {
-  position: absolute;
-  left: 0; 
-  right: 0; 
-  bottom: 10px;
-  display: flex; 
-  justify-content: center; 
-  gap: 8px;
-}
-
-.carousel-area .carousel-dots .dot {
-  width: 10px; 
-  height: 10px; 
-  border-radius: 50%;
-  background: rgba(255,255,255,0.5);
-  border: none; 
-  padding: 0; 
-  cursor: pointer;
-}
-
-.carousel-area .carousel-dots .dot.active {
-  background: rgba(255,255,255,0.95);
-}
-
-.image-list{
-  display: none;
-}
-
 /* =================================================================
    9. MEDIA QUERIES
    ================================================================= */
@@ -620,6 +334,10 @@ button .carousel-arrow {
         flex-wrap: wrap;
         gap: 1rem;
         margin: 1em auto;
+      }
+      .tech-tags img{
+        height: 6em;
+        margin: 0;
       }
    }
 
@@ -670,17 +388,9 @@ button .carousel-arrow {
       }
    }
 
-   @media screen and (max-width: 1100px) {
-    .image-list{
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-      }
-      .image-list img{
-        width: 100%;
-        height: auto;
-      }
-      .swiper{
-        display: none;
-      }
+   @media screen and (max-width: 1750px) {
+    .tech-tags img{
+      height: 6em;
+      margin: 20px 20px 0 0;
+    }
    }

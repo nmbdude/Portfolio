@@ -36,6 +36,14 @@
     <main>
         <section>
             <h3 id="title" style="font-family: 'Google Sans Code';">Signal Drift</h3>
+            <sub>A Solo Project</sub>
+            <div class="project-overview">
+                <ul>
+                    <li><strong>Development Setting:</strong> Independent Personal Project</li>
+                    <li><strong>Software Used:</strong> Unreal Engine 5, Blender, Photoshop</li>
+                    <li><strong>Languages Used:</strong> C++, Blueprints</li>
+                </ul>
+            </div>
         </section>
         <div class="nav-list-overlay">
             <div class="nav-list">
@@ -55,52 +63,36 @@
                     <h2>Summary</h2>
                     <hr>
                     <ul>
-                        <li>A solo project developed during downtime, emphasizing replayability and mechanical depth</li>
-                        <li>Features hybrid controls—point-and-click combined with keyboard input—for a distinct experience</li>
+                        <li><b>Currently being developed</b> during downtime, emphasizing replayability and mechanical depth</li>
+                        <li>Hybrid controls that being point-and-click combined with keyboard input, for a distinct experience</li>
                         <li>Core gameplay revolves around utilizing an oscilloscope, adjusting volume, and aligning signals to meet a quota</li>
-                    </ul>
-                </div>
-                <div class="grid-item">
-                    <h2>Build Breakdown</h2>
-                    <hr>
-                    <ul>
-                        <li><b>Engine:</b> Unreal Engine 5</li>
-                        <li><b>Language:</b> C++ / Blueprints</li>
-                        <li><b>Platform:</b> Windows</li>
                     </ul>
                 </div>
             </div>
             <div class="content">
-                <div class="grid-item">
-                    <h2>Technologies</h2>
-                    <hr>
-                    <ul>
-                        <li>Unity</li>
-                        <li>C#</li>
-                        <li>Linux</li>
-                    </ul>
+                <button class="dropdown-button" onclick="toggleDropdown(document.querySelector('#gallery'), document.querySelector('#gallery-arrow'))">Gallery <img src="../../media/images/icons/arrow-down.png" alt="Toggle Gallery" 
+                    class="expand-arrow" id="gallery-arrow"></button>
+                <hr>
+                <div class="gallery dropdown" id="gallery">
+                    <img src="../../media/images/project-screenshots/signal-drift/oscilloscope.png"
+                        alt="Signal Drift Oscilloscope" onclick="openLightbox(this.src)">
+                    <img src="../../media/images/project-screenshots/signal-drift/game-over.png"
+                        alt="Signal Drift Game Over Screen" onclick="openLightbox(this.src)">
+                    <img src="../../media/images/project-screenshots/signal-drift/power.png"
+                        alt="Signal Drift Power" onclick="openLightbox(this.src)">
+                    <img src="../../media/images/project-screenshots/signal-drift/volume.png"
+                        alt="Signal Drift Volume Control" onclick="openLightbox(this.src)">
                 </div>
-                <div class="grid-item">
-                    <h2>Gallery</h2>
-                    <hr>
-                    <div class="swiper full-bleed">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <img src="../../media/images/project-screenshots/signal-drift/oscilloscope.png" alt="Signal Drift Oscilloscope">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="../../media/images/project-screenshots/signal-drift/game-over.png" alt="Signal Drift Game Over Screen">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="../../media/images/project-screenshots/signal-drift/power.png" alt="Signal Drift Power">
-                            </div>
-                            <div class="swiper-slide" style="pointer-events: none;">
-                                <img src="../../media/images/project-screenshots/signal-drift/volume.png" alt="Signal Drift Volume Control">
-                            </div>
-                        </div>
-                        <button class="carousel-arrow left" type="button" aria-label="Previous slide"></button>
-                        <button class="carousel-arrow right" type="button" aria-label="Next slide"></button>
-                    </div>
+            </div>
+            <div class="content">
+                <button class="dropdown-button" onclick="toggleDropdown(document.querySelector('#vcd'), document.querySelector('#vcd-arrow'))">Virtual Computer Desktop <img src="../../media/images/icons/arrow-down.png" alt="Toggle Gallery" 
+                    class="expand-arrow" id="vcd-arrow"></button>
+                <hr>
+                <div class="dropdown" id="vcd">
+                    <p>The virtual desktop is the main interface the player will interact with in the game, using different apps that are installed.
+                        The apps include the oscilloscope, signal intercepter, and upgrade stations. The player will need to navigate
+                        through these apps to complete their objectives and progress through the game.</p>
+                    </p>
                 </div>
             </div>
         </section>
@@ -113,7 +105,6 @@
             style="max-width: 90%; max-height: 90%; object-fit: contain; border-radius: 8px; box-shadow: 0 8px 32px rgba(0,0,0,0.8); transition: transform 0.3s ease;">
     </div>
     <!-- Swiper 8 JS (CDN) -->
-    <script src="../../js/materialize.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="../../src/swiper.js"></script>
     <script>
@@ -127,5 +118,6 @@
     <script src="../../src/materialize.js"></script>
     <script src="../../src/materialize.min.js"></script>
     <script src="../../src/hamburger.js"></script>
+    <script src="../../src/project.js"></script>
 </body>
 </html>

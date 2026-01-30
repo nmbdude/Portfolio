@@ -36,7 +36,7 @@
         </ul>
     </nav>
 </header>
-    </main>
+    <main>
         <div class="nav-list-overlay">
             <div class="nav-list">
                 <button class="nav-list-close" aria-label="Close navigation menu">×</button>
@@ -47,13 +47,8 @@
                 </ul>
             </div>
         </div>
-        <script src="../../src/index.js"></script>
-        <script src="../../src/redirect.js"></script>
-        <script src="../../src/materialize.js"></script>
-        <script src="../../src/materialize.min.js"></script>
-        <script src="../../src/hamburger.js"></script>
-    </body>
-    </html>
+        <section>
+            <h3 id="title" style="font-family: 'Google Sans Code';">Man V Machine</h3>
         </section>
         <section>
             <div class="content">
@@ -61,18 +56,24 @@
                     <h2>Summary</h2>
                     <hr>
                     <ul>
-                        <li>Platform shooter where you clear robots to win with limited health resources</li>
-                        <li>Health pickups via med-kits dropped by defeated robots</li>
-                        <li>Built with MonoGame; contributed Windows Forms level editor and health systems</li>
+                        <li>Platform shooter where the player must defeat all robots in a level to win</li>
+                        <li>Player has limited health, which can be restored using med-kits, which are dropped by robots</li>
+                        <li>Built in C# using the MonoGame framework</li>
+                    </ul>
+                    <h3 style="font-size: 1.5em;"><b>Main Contributions</b></h3>
+                    <ul>
+                        <li>Developed the level editor using Windows Forms and C#</li>
+                        <li>Helped design core gameplay mechanics and health systems</li>
+                        <li>Implemented player health systems and med-kit mechanics</li>
                     </ul>
                 </div>
                 <div class="grid-item">
                     <h2>Build Breakdown</h2>
                     <hr>
                     <ul>
-                        <li><b>Framework:</b> MonoGame</li>
-                        <li><b>Language:</b> C#</li>
-                        <li><b>Tools:</b> Windows Forms editor</li>
+                        <li><b>MonoGame: </b>Used for game logic and rendering</li>
+                        <li><b>C#: </b>MonoGame's primary programming language</li>
+                        <li><b>Winforms: </b>Used for creating a separate level editor application that runs natively on Windows</li>
                     </ul>
                 </div>
             </div>
@@ -101,14 +102,19 @@
                             <div class="swiper-slide">
                                 <img src="../../media/images/project-screenshots/man-v-machine/man-v-machine-game-over.png" alt="Man V Machine Game Over">
                             </div>
-                            <div class="swiper-slide" style="pointer-events: none;">
-                                <img src="../../media/images/project-screenshots/man-v-machine/man-v-machine-main-menu.png" alt="Man V Machine Main Menu">
-                            </div>
                         </div>
                         <button class="carousel-arrow left" type="button" aria-label="Previous slide"></button>
                         <button class="carousel-arrow right" type="button" aria-label="Next slide"></button>
                     </div>
                 </div>
+                <div class="image-list">
+                        <img src="../../media/images/project-screenshots/man-v-machine/man-v-machine-main-menu.png"
+                            alt="Man V Machine Main Menu" onclick="openLightbox(this.src)">
+                        <img src="../../media/images/project-covers/man-v-machine-cover.png"
+                            alt="Man V Machine Gameplay" onclick="openLightbox(this.src)">
+                        <img src="../../media/images/project-screenshots/man-v-machine/man-v-machine-game-over.png"
+                            alt="Man V Machine Game Over" onclick="openLightbox(this.src)">
+                    </div>
             </div>
         </section>
     </main>
@@ -128,5 +134,10 @@
             menu.classList.toggle('show');
         }
     </script>
+    <script src="../../src/index.js"></script>
+    <script src="../../src/redirect.js"></script>
+    <script src="../../src/materialize.js"></script>
+    <script src="../../src/materialize.min.js"></script>
+    <script src="../../src/hamburger.js"></script>
 </body>
 </html>
