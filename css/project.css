@@ -33,13 +33,20 @@ h2 {
 }
 
 .content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  /* grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem; */
 }
 
-/* Allow grid children to shrink to avoid overflow, except swiper */
-.content > div:not(:has(.swiper)) { min-width: 0; }
+.content button{
+  margin: 0.25em 0;
+}
+
+.content hr{
+  margin: 0.25em 0 1em 0;
+}
 
 /* Clip any accidental horizontal overflow within sections */
 main section { 
@@ -149,11 +156,23 @@ footer{
   background-color: transparent;
 }
 
+.dropdown-button:hover{
+  color: black;
+  background-color: transparent;
+  box-shadow: none;
+}
+
 .dropdown {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-in-out;
     margin-bottom: 1em;
+    height: fit-content;
+}
+
+.dropdown p{
+  font-size: 1.2em;
+
 }
 
 .expand-arrow{

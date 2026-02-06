@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Nate Boone - The House Sitter</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="../../media/images/favicon.png">
 
     <link rel="stylesheet" href="../../css/materialize.css">
     <link rel="stylesheet" href="../../css/materialize.min.css">
@@ -19,8 +20,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
 </head>
-
-<body class="pattern-cross-dots-md" style="background-color: rgba(190, 190, 190, 0.473);">
+<!-- class="pattern-cross-dots-md" style="background-color: rgba(190, 190, 190, 0.473);" -->
+<body style="background-image: url('../../media/images/project-covers/signal-drift-cover.png'); background-size: cover; background-position: center; background-attachment: fixed; background-repeat: no-repeat;">
     <header>
     <nav class="pattern-grid-lg bg-slate-900 text-slate-800">
         <h1 class="name"><button onclick="window.location.href='../../index.html'" style="height: auto; font-weight: bold;">Nate Boone</button></h1>
@@ -34,9 +35,9 @@
     </nav>
 </header>
     <main>
-        <section>
+        <section style="background-color: rgb(32, 32, 32, 0.95); color:#fff;">
             <h3 id="title" style="font-family: 'Google Sans Code';">Signal Drift</h3>
-            <sub>A Solo Project</sub>
+            <sub style="color: rgb(255,255,255);">A Solo Project</sub>
             <div class="project-overview">
                 <ul>
                     <li><strong>Development Setting:</strong> Independent Personal Project</li>
@@ -57,7 +58,7 @@
         </div>
       
         </section>
-        <section>
+        <section style="background-color: rgba(32, 32, 32, 0.95); color:#fff;">
             <div class="content">
                 <div class="grid-item">
                     <h2>Summary</h2>
@@ -70,7 +71,60 @@
                 </div>
             </div>
             <div class="content">
-                <button class="dropdown-button" onclick="toggleDropdown(document.querySelector('#gallery'), document.querySelector('#gallery-arrow'))">Gallery <img src="../../media/images/icons/arrow-down.png" alt="Toggle Gallery" 
+                <button class="dropdown-button" onclick="toggleDropdown(document.querySelector('#vcd'), document.querySelector('#vcd-arrow'))" style="color: #fff">Virtual Computer Desktop<img src="../../media/images/icons/arrow-down-white.png" alt="Toggle VCD" 
+                    class="expand-arrow" id="vcd-arrow"></button>
+                <hr>
+                <div class="dropdown" id="vcd">
+                    <p>The virtual desktop is the main interface the player will interact with in the game, using different apps that are installed.
+                        The apps include the oscilloscope, signal intercepter, and upgrade stations. The player will need to navigate
+                        through these apps to complete their objectives and progress through the game.</p>
+                    </p>
+                </div>
+            </div>
+            <div class="content">
+                <button class="dropdown-button" onclick="toggleDropdown(document.querySelector('#signal'), document.querySelector('#signal-arrow'))" style="color: #fff">Signal Alignment<img src="../../media/images/icons/arrow-down-white.png" alt="Toggle Signal Alignment" 
+                    class="expand-arrow" id="signal-arrow"></button>
+                <hr>
+                <div class="dropdown" id="signal">
+                    <p>The signal alignment mechanic is the core gameplay loop of Signal Drift. Throughout the nights of the game,
+                        the player must align incoming signals using the oscilloscope app on their virtual desktop. The more signals that they
+                        align, the more points that they earn, the more credits they make to upgrade their equipment for future nights. If the quota isn't 
+                        met by the end of the night, the player will be fined and lose credits.
+                    </p>
+                </div>
+            </div>
+            <div class="content">
+                <button class="dropdown-button" onclick="toggleDropdown(document.querySelector('#threat'), document.querySelector('#threat-arrow'))" style="color: #fff">The Threat<img src="../../media/images/icons/arrow-down-white.png" alt="Toggle Threat" 
+                    class="expand-arrow" id="threat-arrow"></button>
+                <hr>
+                <div class="dropdown" id="threat">
+                    <p>Throughout the game, an attacker will try to break into the players location to steal information. The attacker has 3
+                        different stages. The first of which is approaching, when the player can hear faint footsteps around their tower as if they're being
+                        looked for. During this stage, the player can use the camera systems on the desktop to try and drive the attacker away by setting noise decoys.
+                        The second stage is surveying, when the attacker is figuring out the best place to attempt entry. Footsteps are much more audible, and it sounds as if 
+                        they're being observed. The player can use the cameras around their radio tower to shine light on the attacker causing him to go on cooldown. 
+                        The final stage is attempting entry. During which the player must use the must use the reinforcement system to keep the attacker at bay. 
+                        The reinforcement will drain power more quickly, so they must use it sparingly.
+                    </p>
+                </div>
+            </div>
+            <div class="content">
+                <button class="dropdown-button" onclick="toggleDropdown(document.querySelector('#power-management'), document.querySelector('#power-management-arrow'))" style="color: #fff">Power Management<img src="../../media/images/icons/arrow-down-white.png" alt="Toggle Power Management" 
+                    class="expand-arrow" id="power-management-arrow"></button>
+                <hr>
+                <div class="dropdown" id="power-management">
+                    <p>The player only has a limited amount of power throughout the night. However, once the power runs out, it isn't game 
+                        over. Instead, the player can change what power grid they're connected to. Switching power grids will reset the 
+                        amount of power that the player has, however, it does also take time to do, which can be especially problematic if the 
+                        attacker is trying to break in. Additionally, the player can change what power mode they're in to conserve power. 
+                        The modes inlcude normal mode, which uses power at a standard rate, power saver mode, which reduces power consumption but also
+                        redcues the speed at which the computer will process tasks, and off, which completely stops power consumption, but also disables all electronic devices
+                        except for the players flashlight. Managing power effectively is crucial to surviving the nights.
+                    </p>
+                </div>
+            </div>
+            <div class="content">
+                <button class="dropdown-button" onclick="toggleDropdown(document.querySelector('#gallery'), document.querySelector('#gallery-arrow'))" style="color: #fff">Image Gallery<img src="../../media/images/icons/arrow-down-white.png" alt="Toggle Gallery" 
                     class="expand-arrow" id="gallery-arrow"></button>
                 <hr>
                 <div class="gallery dropdown" id="gallery">
@@ -84,17 +138,6 @@
                         alt="Signal Drift Volume Control" onclick="openLightbox(this.src)">
                 </div>
             </div>
-            <div class="content">
-                <button class="dropdown-button" onclick="toggleDropdown(document.querySelector('#vcd'), document.querySelector('#vcd-arrow'))">Virtual Computer Desktop <img src="../../media/images/icons/arrow-down.png" alt="Toggle Gallery" 
-                    class="expand-arrow" id="vcd-arrow"></button>
-                <hr>
-                <div class="dropdown" id="vcd">
-                    <p>The virtual desktop is the main interface the player will interact with in the game, using different apps that are installed.
-                        The apps include the oscilloscope, signal intercepter, and upgrade stations. The player will need to navigate
-                        through these apps to complete their objectives and progress through the game.</p>
-                    </p>
-                </div>
-            </div>
         </section>
     </main>
     <div id="lightbox" class="lightbox" onclick="closeLightbox()"
@@ -105,14 +148,6 @@
             style="max-width: 90%; max-height: 90%; object-fit: contain; border-radius: 8px; box-shadow: 0 8px 32px rgba(0,0,0,0.8); transition: transform 0.3s ease;">
     </div>
     <!-- Swiper 8 JS (CDN) -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <script src="../../src/swiper.js"></script>
-    <script>
-        function toggleMenu() {
-            const menu = document.querySelector('.nav-menu');
-            menu.classList.toggle('show');
-        }
-    </script>
     <script src="../../src/index.js"></script>
     <script src="../../src/redirect.js"></script>
     <script src="../../src/materialize.js"></script>
