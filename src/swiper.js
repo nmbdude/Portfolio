@@ -80,11 +80,13 @@ if (typeof window.openLightbox !== 'function') {
       if (!lightbox || !lightboxImg) return;
       lightboxImg.src = src || lightboxImg.src;
       lightbox.style.display = 'flex';
+      lightboxImg.style.transform = 'scale(1)'; // Reset zoom
       // Fade in
       requestAnimationFrame(function() {
         lightbox.style.opacity = '1';
       });
       document.addEventListener('keydown', escHandler);
+      setupLightboxEventListeners();
     };
 
     window.closeLightbox = function() {
@@ -98,5 +100,42 @@ if (typeof window.openLightbox !== 'function') {
       }, 300);
       document.removeEventListener('keydown', escHandler);
     };
+
+    function setupLightboxEventListeners() {
+      var lightbox = document.getElementById('lightbox');
+      var lightboxImg = document.getElementById('lightbox-img');
+      if (!lightbox || !lightboxImg) return;
+
+      // Remove existing listeners to avoid duplicates
+      lightbox.removeEventListener('click', lightboxClickHandler);
+      lightboxImg.removeEventListener('click', imageClickHandler);
+
+      // Close on background click
+      lightbox.addEventListener('click', lightboxClickHandler);
+
+      // Toggle zoom on image click
+      lightboxImg.addEventListener('click', imageClickHandler);
+    }
+
+    function lightboxClickHandler(e) {
+      if (e.target.id === 'lightbox') {
+        window.closeLightbox();
+      }
+    }
+
+    function imageClickHandler(e) {
+      e.stopPropagation();
+      toggleImageZoom();
+    }
+
+    function toggleImageZoom() {
+      var lightboxImg = document.getElementById('lightbox-img');
+      if (!lightboxImg) return;
+      if (lightboxImg.style.transform === 'scale(1.5)') {
+        lightboxImg.style.transform = 'scale(1)';
+      } else {
+        lightboxImg.style.transform = 'scale(1.5)';
+      }
+    }
   })();
 }

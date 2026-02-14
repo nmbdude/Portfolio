@@ -66,7 +66,7 @@
                     <ul>
                         <li><b>Currently being developed</b> during downtime, emphasizing replayability and mechanical depth</li>
                         <li>Hybrid controls that being point-and-click combined with keyboard input, for a distinct experience</li>
-                        <li>Core gameplay revolves around utilizing an oscilloscope, adjusting volume, and aligning signals to meet a quota</li>
+                        <li>Core gameplay revolves around utilizing an oscilloscope, adjusting volume, and aligning signals to meet a quota all while keeping a looming threat away</li>
                     </ul>
                 </div>
             </div>
@@ -77,7 +77,13 @@
                 <div class="dropdown" id="vcd">
                     <p>The virtual desktop is the main interface the player will interact with in the game, using different apps that are installed.
                         The apps include the oscilloscope, signal intercepter, and upgrade stations. The player will need to navigate
-                        through these apps to complete their objectives and progress through the game.</p>
+                        through these apps to complete their objectives and progress through the game.
+                        <button class="dropdown-button-nested" onclick="toggleDropdown(document.querySelector('#vcd-blueprints'), document.querySelector('#vcd-arrow-blueprints'))" style="color: #fff">Blueprint Snippits<img src="../../media/images/icons/arrow-down-white.png" alt="Toggle VCD" 
+                            class="expand-arrow" id="vcd-arrow-blueprints"></button>
+                        <div class="dropdown" id="vcd-blueprints">
+                            <img class="dropdown-image" src="../../media/images/project-screenshots/signal-drift/blueprints/project-hit-to-canvas.png" alt="Projecting Hit to Canvas">
+                            <img class="dropdown-image" src="../../media/images/project-screenshots/signal-drift/blueprints/normalize-canvas-space.png" alt="Normalizing Canvas Space">
+                        </div>
                     </p>
                 </div>
             </div>
@@ -140,12 +146,12 @@
             </div>
         </section>
     </main>
-    <div id="lightbox" class="lightbox" onclick="closeLightbox()"
-        style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.9); align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease;">
+    <div id="lightbox" class="lightbox"
+        style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.9); align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; overflow: auto;">
         <span class="close" onclick="closeLightbox()"
             style="position: absolute; top: 20px; right: 35px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; transition: 0.3s; z-index: 1001;">&times;</span>
         <img class="lightbox-content" id="lightbox-img"
-            style="max-width: 90%; max-height: 90%; object-fit: contain; border-radius: 8px; box-shadow: 0 8px 32px rgba(0,0,0,0.8); transition: transform 0.3s ease;">
+            style="max-width: 90%; max-height: 90%; object-fit: contain; border-radius: 8px; box-shadow: 0 8px 32px rgba(0,0,0,0.8); transition: transform 0.3s ease; cursor: pointer;">
     </div>
     <!-- Swiper 8 JS (CDN) -->
     <script src="../../src/index.js"></script>
