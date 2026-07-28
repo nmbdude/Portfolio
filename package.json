@@ -11,6 +11,9 @@
     "swiper": "^12.0.2"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.8.0",
+    "globals": "^17.8.0",
     "webpack": "^5.102.1",
     "webpack-cli": "^6.0.1"
   },
