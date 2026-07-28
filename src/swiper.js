@@ -17,15 +17,17 @@ document.addEventListener('DOMContentLoaded', function() {
     effect: "creative",
     creativeEffect: {
       prev: {
-        shadow: true,
+        shadow: false,
         origin: "left center",
         translate: ["-5%", 0, -200],
+        opacity: 0,
         rotate: [0, 100, 0],
       },
       next: {
-        shadow: true,
+        shadow: false,
         origin: "right center",
         translate: ["5%", 0, -200],
+        opacity: 0,
         rotate: [0, -100, 0],
       },
     },

@@ -32,13 +32,15 @@ let collapseDropdown = (dropdownElement, dropdownArrow) => {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Open Lightbox when clicking on an image with the class 'dropdown-image'
-    document.querySelectorAll('.dropdown-image').forEach(image => {
+    let lightbox;
+    let lightboxImage;
+    let currentIndex;
+    let images = document.querySelectorAll('.lightbox-image');
+    images.forEach(image => {
         image.addEventListener('click', (e) => {
             e.stopPropagation();
-            let lightbox = document.getElementById('lightbox');
-            let lightboxImage = document.getElementById('lightbox-img');
-            
+            lightbox = document.getElementById('lightbox');
+            lightboxImage = document.getElementById('lightbox-img');
             if (!lightbox || !lightboxImage) {
                 return;
             }
@@ -46,11 +48,31 @@ document.addEventListener('DOMContentLoaded', () => {
             lightboxImage.src = image.src;
             lightboxImage.style.transform = 'scale(1)';
             lightbox.style.display = 'flex';
-            lightbox.style.opacity = '1';
-            
+            lightbox.style.opacity = '0';
+            // Find where we are in the image list
+            for (let i = 0; i  < images.length; i++) {
+                if(lightboxImage.src == images[i].src) {
+                    currentIndex = i;
+                    break;
+                }
+            }
             // Setup lightbox event listeners
             setupLightboxListeners();
         });
+    });
+    document.querySelector('#lightbox-button-left').addEventListener('click', () => {
+        console.log(currentIndex);
+        if(currentIndex - 1 >= 0) {
+            lightboxImage.src = images[currentIndex - 1].src;
+            currentIndex--;
+        }
+    });
+    document.querySelector('#lightbox-button-right').addEventListener('click', () => {
+    console.log(currentIndex);
+    if(currentIndex + 1 < images.length) {
+        lightboxImage.src = images[currentIndex + 1].src;
+        currentIndex++;
+    }
     });
 });
 

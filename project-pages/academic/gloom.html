@@ -47,7 +47,6 @@
                 </ul>
             </div>
         </div>
-        </section>
         <section>
             <div class="content">
                 <div class="grid-item">
@@ -92,21 +91,29 @@
                     <hr>
                     <div class="swiper full-bleed">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <img src="../../media/images/project-screenshots/gloom/apartment1_kitchen.png" alt="Gloom Screenshot 1">
+                            <div class="swiper-slide lightbox-img">
+                                <img class="lightbox-image" src="../../media/images/project-screenshots/gloom/apartment1_kitchen.png" alt="Gloom Screenshot 1">
                             </div>
-                            <div class="swiper-slide">
-                                <img src="../../media/images/project-screenshots/gloom/apartment3_background.png" alt="Gloom Screenshot 2">
+                            <div class="swiper-slide lightbox-img">
+                                <img class="lightbox-image" src="../../media/images/project-screenshots/gloom/apartment3_background.png" alt="Gloom Screenshot 2">
                             </div>
-                            <div class="swiper-slide">
-                                <img src="../../media/images/project-screenshots/gloom/tooltips_and_inventory.png" alt="Gloom Screenshot 3">
+                            <div class="swiper-slide lightbox-img">
+                                <img class="lightbox-image" src="../../media/images/project-screenshots/gloom/tooltips_and_inventory.png" alt="Gloom Screenshot 3">
                             </div>
                         </div>
-                        <button class="carousel-arrow left" type="button" aria-label="Previous slide"></button>
-                        <button class="carousel-arrow right" type="button" aria-label="Next slide"></button>
+                        <button class="carousel-arrow left" id="left-swiper" type="button" aria-label="Previous slide">
+                            <img src="../../media/images/icons/arrow-down-white.png" style="rotate: 90deg; filter: brightness(0);">
+                        </button>
+                        <button class="carousel-arrow right" id="right-swiper" type="button" aria-label="Next slide">
+                            <img src="../../media/images/icons/arrow-down-white.png" style="rotate: -90deg; filter: brightness(0);">
+                        </button>
                     </div>
                 </div>
-            </div>
+                <div class="vertical-gallery">
+                    <img src="../../media/images/project-screenshots/gloom/apartment1_kitchen.png" alt="Gloom Screenshot 1">
+                    <img src="../../media/images/project-screenshots/gloom/apartment3_background.png" alt="Gloom Screenshot 2">
+                    <img src="../../media/images/project-screenshots/gloom/tooltips_and_inventory.png" alt="Gloom Screenshot 3">
+                </div>
         </section>
     </main>
     <div id="lightbox" class="lightbox"
@@ -115,7 +122,13 @@
             style="position: absolute; top: 20px; right: 35px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; transition: 0.3s; z-index: 1001;">&times;</span>
         <img class="lightbox-content" id="lightbox-img"
             style="max-width: 90%; max-height: 90%; object-fit: contain; border-radius: 8px; box-shadow: 0 8px 32px rgba(0,0,0,0.8); transition: transform 0.3s ease; cursor: pointer;">
-    </div>
+        <button class="lightbox-button" id="lightbox-button-left" type="button" aria-label="Previous slide">
+            <img src="../../media/images/icons/arrow-down-white.png" style="rotate: 90deg; filter: brightness(0) invert(1);">
+        </button>
+        <button class="lightbox-button" id="lightbox-button-right" type="button" aria-label="Next slide">
+            <img src="../../media/images/icons/arrow-down-white.png" style="rotate: -90deg; filter: brightness(0) invert(1);">
+        </button>
+        </div>
     <!-- Swiper 8 JS (CDN) -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="../../src/swiper.js"></script>
@@ -126,9 +139,10 @@
         }
     </script>
     <script src="../../src/index.js"></script>
-        <script src="../../src/redirect.js"></script>
-        <script src="../../src/materialize.js"></script>
-        <script src="../../src/materialize.min.js"></script>
-        <script src="../../src/hamburger.js"></script>
+    <script src="../../src/project.js"></script>
+    <script src="../../src/redirect.js"></script>
+    <script src="../../src/materialize.js"></script>
+    <script src="../../src/materialize.min.js"></script>
+    <script src="../../src/hamburger.js"></script>
 </body>
 </html>
