@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let lightbox;
     let lightboxImage;
     let currentIndex;
+    let inVertGal;
     let images = document.querySelectorAll('.lightbox-image');
     images.forEach(image => {
         image.addEventListener('click', (e) => {
@@ -53,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
             for (let i = 0; i  < images.length; i++) {
                 if(lightboxImage.src == images[i].src) {
                     currentIndex = i;
+                    inVertGal = false;
                     break;
                 }
             }
@@ -60,17 +62,50 @@ document.addEventListener('DOMContentLoaded', () => {
             setupLightboxListeners();
         });
     });
+
+    let verticalGalleryImages = document.querySelectorAll('.vertical-gallery img');
+    verticalGalleryImages.forEach(image => {
+        image.addEventListener('click', (e) => {
+            e.stopPropagation();
+            lightbox = document.getElementById('lightbox');
+            lightboxImage = document.getElementById('lightbox-img');
+            if (!lightbox || !lightboxImage) {
+                return;
+            }
+            
+            lightboxImage.src = image.src;
+            lightboxImage.style.transform = 'scale(1)';
+            lightbox.style.display = 'flex';
+            lightbox.style.opacity = '1';
+
+            // Find where we are in the image list
+            for (let i = 0; i  < images.length; i++) {
+                if(lightboxImage.src == images[i].src) {
+                    currentIndex = i;
+                    inVertGal = true;
+                    break;
+                }
+            }
+            // Setup lightbox event listeners
+            setupLightboxListeners();
+        });
+    });
+
     document.querySelector('#lightbox-button-left').addEventListener('click', () => {
         console.log(currentIndex);
         if(currentIndex - 1 >= 0) {
-            lightboxImage.src = images[currentIndex - 1].src;
+            if(inVertGal) {
+                lightboxImage.src = verticalGalleryImages[currentIndex - 1].src;
+            } else { lightboxImage.src = images[currentIndex - 1].src; }
             currentIndex--;
         }
     });
     document.querySelector('#lightbox-button-right').addEventListener('click', () => {
     console.log(currentIndex);
     if(currentIndex + 1 < images.length) {
-        lightboxImage.src = images[currentIndex + 1].src;
+        if(inVertGal) {
+            lightboxImage.src = verticalGalleryImages[currentIndex + 1].src;
+        } else { lightboxImage.src = images[currentIndex + 1].src; }
         currentIndex++;
     }
     });
