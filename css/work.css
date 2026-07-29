@@ -1,10 +1,13 @@
 #title{
-    font-size: 6em;
+    font-size: clamp(3em, 6vw, 6em);
     font-weight: bold;
     margin-bottom: 0.5em;
     font-family: 'open-sans', sans-serif;
     text-align: center;
-    
+}
+
+strong {
+    font-weight: bolder;
 }
 
 main{

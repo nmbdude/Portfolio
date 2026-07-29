@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
             lightboxImage.src = image.src;
             lightboxImage.style.transform = 'scale(1)';
             lightbox.style.display = 'flex';
-            lightbox.style.opacity = '0';
+            lightbox.style.opacity = '1';
             // Find where we are in the image list
             for (let i = 0; i  < images.length; i++) {
                 if(lightboxImage.src == images[i].src) {

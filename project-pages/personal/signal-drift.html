@@ -21,7 +21,7 @@
         rel="stylesheet">
 </head>
 <!-- class="pattern-cross-dots-md" style="background-color: rgba(190, 190, 190, 0.473);" -->
-<body style="background-image: url('../../media/images/project-covers/signal-drift-cover.png'); background-size: cover; background-position: center; background-attachment: fixed; background-repeat: no-repeat;">
+<body style="background-image: url('../../media/images/project-covers/signal-drift-cover.png'); background-size:cover; background-position: center; background-attachment: fixed; background-repeat:repeat-y;">
     <header>
     <nav class="pattern-grid-lg bg-slate-900 text-slate-800">
         <h1 class="name"><button onclick="window.location.href='../../index.html'" style="height: auto; font-weight: bold;">Nate Boone</button></h1>
@@ -72,26 +72,32 @@
                 </div>
             </div>
             <div class="content">
-                <button class="dropdown-button" onclick="toggleDropdown(document.querySelector('#vcd'), document.querySelector('#vcd-arrow'))" style="color: #fff">Virtual Computer Desktop<img src="../../media/images/icons/arrow-down-white.png" alt="Toggle VCD" 
-                    class="expand-arrow" id="vcd-arrow"></button>
-                <hr>
+                <button class="dropdown-button" onclick="toggleDropdown(document.querySelector('#vcd'), document.querySelector('#vcd-arrow'))" style="color: #fff;">Virtual Computer
+                    <span class="together">Desktop<img src="../../media/images/icons/arrow-down-white.png" style="filter: brightness(0) invert(1);" alt="Toggle VCD" 
+                    class="expand-arrow" id="vcd-arrow"></span>
+                    <hr>
+                </button>
                 <div class="dropdown" id="vcd">
                     <p>The virtual desktop is the main interface the player will interact with in the game, using different apps that are installed.
                         The apps include the oscilloscope, signal intercepter, and upgrade stations. The player will need to navigate
                         through these apps to complete their objectives and progress through the game.
-                        <button class="dropdown-button-nested" onclick="toggleDropdown(document.querySelector('#vcd-blueprints'), document.querySelector('#vcd-arrow-blueprints'))" style="color: #fff">Blueprint Snippits<img src="../../media/images/icons/arrow-down-white.png" alt="Toggle VCD" 
-                            class="expand-arrow" id="vcd-arrow-blueprints"></button>
+                        <button class="dropdown-button-nested" onclick="toggleDropdown(document.querySelector('#vcd-blueprints'), document.querySelector('#vcd-arrow-blueprints'))" style="color: #fff">Blueprint 
+                            <span class="together">Snippets<img src="../../media/images/icons/arrow-down-white.png" style="filter: brightness(0) invert(1);" alt="Toggle VCD" 
+                            class="expand-arrow" id="vcd-arrow-blueprints"></span>
+                            </button>
                         <div class="dropdown" id="vcd-blueprints">
-                            <img class="dropdown-image" src="../../media/images/project-screenshots/signal-drift/blueprints/project-hit-to-canvas.png" alt="Projecting Hit to Canvas">
-                            <img class="dropdown-image" src="../../media/images/project-screenshots/signal-drift/blueprints/normalize-canvas-space.png" alt="Normalizing Canvas Space">
+                            <img class="lightbox-image" src="../../media/images/project-screenshots/signal-drift/blueprints/project-hit-to-canvas.png" alt="Projecting Hit to Canvas">
+                            <img class="lightbox-image" src="../../media/images/project-screenshots/signal-drift/blueprints/normalize-canvas-space.png" alt="Normalizing Canvas Space">
                         </div>
                     </p>
                 </div>
             </div>
             <div class="content">
-                <button class="dropdown-button" onclick="toggleDropdown(document.querySelector('#signal'), document.querySelector('#signal-arrow'))" style="color: #fff">Signal Alignment<img src="../../media/images/icons/arrow-down-white.png" alt="Toggle Signal Alignment" 
-                    class="expand-arrow" id="signal-arrow"></button>
-                <hr>
+                <button class="dropdown-button" onclick="toggleDropdown(document.querySelector('#signal'), document.querySelector('#signal-arrow'))" style="color: #fff">Signal
+                    <span class="together">Alignment<img src="../../media/images/icons/arrow-down-white.png" style="filter: brightness(0) invert(1);" alt="Toggle Signal Alignment" 
+                    class="expand-arrow" id="signal-arrow"></span>
+                    <hr></button>
+                
                 <div class="dropdown" id="signal">
                     <p>The signal alignment mechanic is the core gameplay loop of Signal Drift. Throughout the nights of the game,
                         the player must align incoming signals using the oscilloscope app on their virtual desktop. The more signals that they
@@ -101,9 +107,10 @@
                 </div>
             </div>
             <div class="content">
-                <button class="dropdown-button" onclick="toggleDropdown(document.querySelector('#threat'), document.querySelector('#threat-arrow'))" style="color: #fff">The Threat<img src="../../media/images/icons/arrow-down-white.png" alt="Toggle Threat" 
-                    class="expand-arrow" id="threat-arrow"></button>
-                <hr>
+                <button class="dropdown-button" onclick="toggleDropdown(document.querySelector('#threat'), document.querySelector('#threat-arrow'))" style="color: #fff">The
+                    <span class="together">Threat <img src="../../media/images/icons/arrow-down-white.png" style="filter: brightness(0) invert(1);" alt="Toggle Threat" 
+                    class="expand-arrow" id="threat-arrow"></span>
+                    <hr></button>
                 <div class="dropdown" id="threat">
                     <p>Throughout the game, an attacker will try to break into the players location to steal information. The attacker has 3
                         different stages. The first of which is approaching, when the player can hear faint footsteps around their tower as if they're being
@@ -116,9 +123,11 @@
                 </div>
             </div>
             <div class="content">
-                <button class="dropdown-button" onclick="toggleDropdown(document.querySelector('#power-management'), document.querySelector('#power-management-arrow'))" style="color: #fff">Power Management<img src="../../media/images/icons/arrow-down-white.png" alt="Toggle Power Management" 
-                    class="expand-arrow" id="power-management-arrow"></button>
-                <hr>
+                <button class="dropdown-button" onclick="toggleDropdown(document.querySelector('#power-management'), document.querySelector('#power-management-arrow'))" style="color: #fff">Power
+                    <span class="together">Management<img src="../../media/images/icons/arrow-down-white.png" style="filter: brightness(0) invert(1);" alt="Toggle Power Management" 
+                    class="expand-arrow" id="power-management-arrow"></span>
+                    <hr>
+                </button>
                 <div class="dropdown" id="power-management">
                     <p>The player only has a limited amount of power throughout the night. However, once the power runs out, it isn't game 
                         over. Instead, the player can change what power grid they're connected to. Switching power grids will reset the 
@@ -131,18 +140,20 @@
                 </div>
             </div>
             <div class="content">
-                <button class="dropdown-button" onclick="toggleDropdown(document.querySelector('#gallery'), document.querySelector('#gallery-arrow'))" style="color: #fff">Image Gallery<img src="../../media/images/icons/arrow-down-white.png" alt="Toggle Gallery" 
-                    class="expand-arrow" id="gallery-arrow"></button>
+                <button class="dropdown-button" onclick="toggleDropdown(document.querySelector('#gallery'), document.querySelector('#gallery-arrow'))" style="color: #fff">Image
+                    <span class="together">Gallery<img src="../../media/images/icons/arrow-down-white.png" alt="Toggle Gallery" 
+                    class="expand-arrow" style="filter: brightness(0) invert(1);" id="gallery-arrow"></span>
                 <hr>
+                </button>
                 <div class="gallery dropdown" id="gallery">
                     <img src="../../media/images/project-screenshots/signal-drift/oscilloscope.png"
-                        alt="Signal Drift Oscilloscope" onclick="openLightbox(this.src)">
+                        class="lightbox-image" alt="Signal Drift Oscilloscope">
                     <img src="../../media/images/project-screenshots/signal-drift/game-over.png"
-                        alt="Signal Drift Game Over Screen" onclick="openLightbox(this.src)">
+                        class="lightbox-image" alt="Signal Drift Game Over Screen">
                     <img src="../../media/images/project-screenshots/signal-drift/power.png"
-                        alt="Signal Drift Power" onclick="openLightbox(this.src)">
+                        class="lightbox-image" alt="Signal Drift Power">
                     <img src="../../media/images/project-screenshots/signal-drift/volume.png"
-                        alt="Signal Drift Volume Control" onclick="openLightbox(this.src)">
+                        class="lightbox-image" alt="Signal Drift Volume Control">
                 </div>
             </div>
         </section>
@@ -153,9 +164,16 @@
             style="position: absolute; top: 20px; right: 35px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; transition: 0.3s; z-index: 1001;">&times;</span>
         <img class="lightbox-content" id="lightbox-img"
             style="max-width: 90%; max-height: 90%; object-fit: contain; border-radius: 8px; box-shadow: 0 8px 32px rgba(0,0,0,0.8); transition: transform 0.3s ease; cursor: pointer;">
+        <button class="lightbox-button" id="lightbox-button-left" type="button" aria-label="Previous slide">
+            <img src="../../media/images/icons/arrow-down-white.png" style="rotate: 90deg; filter: brightness(0) invert(1);">
+        </button>
+        <button class="lightbox-button" id="lightbox-button-right" type="button" aria-label="Next slide">
+            <img src="../../media/images/icons/arrow-down-white.png" style="rotate: -90deg; filter: brightness(0) invert(1);">
+        </button>
     </div>
     <!-- Swiper 8 JS (CDN) -->
     <script src="../../src/index.js"></script>
+    <script src="../../src/project.js"></script>
     <script src="../../src/redirect.js"></script>
     <script src="../../src/materialize.js"></script>
     <script src="../../src/materialize.min.js"></script>

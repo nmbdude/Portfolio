@@ -42,15 +42,24 @@ h2 {
 
 .content button{
   margin: 0.25em 0;
+  height: fit-content;
 }
 
 .content hr{
-  margin: 0.25em 0 1em 0;
+  margin: 0.25em 0 0 0;
+}
+
+.together{
+  background-color: #00000000;
+  font-size: 1em;
+  white-space: nowrap;
+  padding: 0;
 }
 
 /* Clip any accidental horizontal overflow within sections */
 main section { 
   margin: 2em auto;
+  overflow: scroll;
 }
 
 .content div ul {
@@ -393,6 +402,10 @@ footer{
   transform: translate(-50%, -50%) !important;
 }
 
+.dropdown .lightbox-image {
+  width: 100%;
+}
+
 /* =================================================================
    6. BUTTONS
    ================================================================= */
@@ -557,6 +570,17 @@ button:focus {
 
       .vertical-gallery img {
         max-width: 100%;
+      }
+   }
+   
+   @media screen and (max-width: 350px) {
+      #lightbox-button-left {
+        left: 50%;
+        top: 30%
+      }
+      #lightbox-button-right {
+        left: 50%;
+        top: 70%
       }
    }
 
